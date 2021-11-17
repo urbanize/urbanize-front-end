@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -31,7 +31,7 @@ public class Usuario {
 	private String usuario;
 
 	@NotBlank(message = "É obrigatório inserir senha")
-	@Min(6)
+	@Size(min = 8 , message = "A senha deve conter no mínimo 8 caracteres")
 	private String senha;
 
 	
