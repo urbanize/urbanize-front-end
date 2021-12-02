@@ -5,13 +5,13 @@ import { AppBar, Box, Button, Toolbar } from '@material-ui/core';
 
 export default function NavBar() {
     return (
-            <AppBar position="static" style={{ backgroundColor: "#f99e29" }}variant ="dense" >
+            <AppBar position="static" variant="elevation" style={{ backgroundColor: "#f99e29" }} >
                 <Toolbar style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
                 <Link to='/home' className='text-decorator-none'>
                     <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />  
                 </Link>
                <Box>
-                    <Link to='/home' className='text-decorator-none'>
+                    <Link to='/login' className='text-decorator-none'>
                         <Button color="inherit" style={{fontWeight: "bold"}}>Entrar</Button>
                     </Link>                        
                     <Link to='/cadastrar' className='text-decorator-none2'>

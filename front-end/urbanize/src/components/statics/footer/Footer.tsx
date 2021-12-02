@@ -9,7 +9,7 @@ export default function Footer() {
         <>
             <Grid container direction="row" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", backgroundColor: "#f99e29"  }}>
                     <Box style={{ backgroundColor: "#f99e29", height: "60px" }}>
-                        <Box paddingTop={3}>
+                        <Box>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
                         </Box>
                         <Box>

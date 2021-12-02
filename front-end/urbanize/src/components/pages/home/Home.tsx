@@ -24,7 +24,7 @@ export default function Home() {
 					</Box>
 				</Grid>
 				<Grid item xs={6} >
-					<img src="https://i.imgur.com/WewRlkd.png" alt="imagem abstrata de pessoas em público" width="600px" height="600px"/>
+					<img src="https://i.imgur.com/WewRlkd.png" alt="imagem abstrata de pessoas em público" width="650px" height="650px"/>
 				</Grid>
 				<Grid xs={12} style={{ backgroundColor: "white" }}>
 				</Grid>
