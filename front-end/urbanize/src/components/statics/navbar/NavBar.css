@@ -1,0 +1,12 @@
+.text-decorator-none{
+    text-decoration: none;
+    color: white!important;
+}
+.text-decorator-none2{
+    text-decoration: none;
+}
+.bot{
+    background: white!important;
+    border-radius: 9%;
+    padding: 9px 18px;
+}

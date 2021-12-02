@@ -1,0 +1,18 @@
+.bot{
+    text-decoration: none;
+    border-color: #fafafa;
+    background: #fafafa!important;
+    color: #f99e29!important;
+    margin-right: 30px!important;
+}
+.bot2{
+    text-decoration: none;
+    border-color: #fafafa;
+    background: #f99e29!important;
+    color: #fafafa!important;
+    margin-right: 50px!important;
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}

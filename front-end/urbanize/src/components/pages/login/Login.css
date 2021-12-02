@@ -1,0 +1,28 @@
+.card{
+    background: rgb(241, 241, 241);
+}
+
+.background{
+    
+    background: rgb(245,144,68);
+    background: radial-gradient(circle, rgba(245,144,68,1) 28%, rgba(249,158,41,1) 65%);
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.color-input{
+    background-color: white;
+    color: white;
+    border-color: white;
+    border-radius: 6px;
+    height: 30px;
+}
+
+.botao{
+    border-radius: 6px!important;
+    background-color: white!important;
+    border-color: #424242!important;
+    color: #f99e29!important;
+}
