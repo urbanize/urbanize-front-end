@@ -1,16 +1,25 @@
+.imagem3{
+    background-image: url(https://i.imgur.com/WewRlkd.png);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
 .bot{
     text-decoration: none;
     border-color: #fafafa;
     background: #fafafa!important;
     color: #f99e29!important;
-    margin-right: 30px!important;
+    margin-right: 60px!important;
 }
 .bot2{
     text-decoration: none;
     border-color: #fafafa;
     background: #f99e29!important;
     color: #fafafa!important;
-    margin-right: 50px!important;
+    margin-right: 80px!important;
 }
 
 .text-decorator-none{

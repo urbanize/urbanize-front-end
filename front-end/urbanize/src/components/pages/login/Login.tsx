@@ -44,15 +44,10 @@ function Login() {
         }
 
     return (
-        <Grid container className="background">
-            <Grid item xs={12}>
-
-                <Box display="flex" justifyContent="center" alignItems="center" height="80vh" >
-                    <Box className="card" width={270} height="50vh" borderRadius={2} marginTop={12} display="flex" justifyContent="center" alignItems="center">
-                        <Box >
-                            <Typography variant="h5" align="center">
-                                Entrar
-                            </Typography>
+        <Grid container direction='row' justifyContent='center' alignItems='center' >
+            <Grid item xs={6} alignItems='center'>
+                <Box paddingX={18} justify-content='center'>
+                    <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Entrar</Typography>
                             <form onSubmit={onSubmit}>
                                 <Box marginY={4}>
                                 <TextField value={userLogin.usuario} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
@@ -63,18 +58,17 @@ function Login() {
                                 <TextField value={userLogin.senha} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password'fullWidth />
 
                                 </Box>
+                               <Typography variant="h5" align="center">
                                 <Button type='submit' variant="contained" color="secondary" className="botao">
                                     Login
                                 </Button> 
+                                </Typography>
+                                
                             </form>
-                            
-                        </Box>
-                    </Box>
                 </Box>
             </Grid>
-
+            <Grid item xs={6} className='imagem4'></Grid>
         </Grid>
-    )
+    );
 }
-
 export default Login 
