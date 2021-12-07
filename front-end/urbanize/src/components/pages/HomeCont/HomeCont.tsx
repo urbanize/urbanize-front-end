@@ -10,8 +10,8 @@ export default function HomeCont() {
                 <Grid item xs={9} className='imagem5'></Grid>
                 <Grid item xs={3}>
                     <Box paddingX={2} >
-                    <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="right" style={{ color: "#424242", fontWeight: "bold" }}>NÓS ACREDITAMOS QUE INICIATIVAS PRIVADAS PODEM REVITALIZAR ESPAÇOS PÚBLICOS.</Typography>
-                    <Typography variant="h6" gutterBottom color="textPrimary" component="h6" align="right" style={{ color: "#424242", fontWeight: "bold" }}>SAIBA MAIS</Typography>
+                        <Typography className='font2' variant="h3" gutterBottom color="textPrimary" component="h3" align="right" style={{ color: "#424242", fontWeight: "bold" }}>NÓS ACREDITAMOS QUE INICIATIVAS PRIVADAS PODEM REVITALIZAR ESPAÇOS PÚBLICOS.</Typography>
+                        <Typography className='font2' variant="h6" gutterBottom color="textPrimary" component="h6" align="right" style={{ color: "#424242", fontWeight: "bold" }}>SAIBA MAIS</Typography>
                     </Box>
                 </Grid>
                

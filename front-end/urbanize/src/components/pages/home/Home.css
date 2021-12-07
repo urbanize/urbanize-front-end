@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap%27);
+
 .imagem3{
     background-image: url(https://i.imgur.com/WewRlkd.png);
     background-repeat: no-repeat;
@@ -12,16 +14,20 @@
     border-color: #fafafa;
     background: #fafafa!important;
     color: #f99e29!important;
-    margin-right: 60px!important;
+    margin-right: 20px!important;
 }
 .bot2{
     text-decoration: none;
     border-color: #fafafa;
     background: #f99e29!important;
     color: #fafafa!important;
-    margin-right: 80px!important;
+    margin-right: 110px!important;
 }
 
 .text-decorator-none{
     text-decoration: none;
+}
+
+.font{
+font-family: 'Source Sans Pro', sans-serif;
 }
