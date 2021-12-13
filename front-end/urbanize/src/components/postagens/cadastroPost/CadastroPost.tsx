@@ -38,12 +38,16 @@ function CadastroPost() {
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
-            descricao: ''
+            descricao: '',
+            palavraChave: ''
         })
     const [postagem, setPostagem] = useState<Postagem>({
-        id: 0,
-        titulo: '',
-        texto: '',
+        id: number,
+        titulo: string,
+        texto: string,
+        contato: string,
+        data: string,
+        midia: string,
         tema: null
     })
 
@@ -62,7 +66,7 @@ function CadastroPost() {
     }, [id])
 
     async function getTemas() {
-        await busca("/tema", setTemas, {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -143,7 +147,7 @@ function CadastroPost() {
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
                             headers: {
                                 'Authorization': token
                             }
