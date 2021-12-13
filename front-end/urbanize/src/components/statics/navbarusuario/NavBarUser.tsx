@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { toast } from 'react-toastify';
 import { UserState } from '../../../store/user/userReducer';
 import { addName, addTipo, addToken } from '../../../store/user/actions';
+import './NavBarUser.css';
 
 function NavBarUser() {
     const token = useSelector<UserState, UserState["tokens"]>(
@@ -25,7 +26,6 @@ function NavBarUser() {
     function goLogout() {
         dispatch(addToken(''));
         dispatch(addName(''));
-        // adicione o dispatch para o tipo
         dispatch(addTipo(''));
         toast.info('Usuário deslogado', {
             position: "top-right",
@@ -85,7 +85,8 @@ function NavBarUser() {
                 </Box>
             </Toolbar>
         </AppBar>
-    } else {
+    } 
+    else {
         navbarComponent = <NavBar />
     }
     return (
