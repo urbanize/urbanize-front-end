@@ -10,12 +10,12 @@ export default function NavBar() {
                 <Link to='/home' className='text-decorator-none'>
                     <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />  
                 </Link>
-               <Box>
+                <Box paddingLeft={25}>
                     <Link to='/login' className='text-decorator-none'>
                         <Button color="inherit" style={{fontWeight: "bold"}}>Entrar</Button>
                     </Link>                        
                     <Link to='/cadastrar' className='text-decorator-none2'>
-                        <Button color="inherit" style={{fontWeight: "bold"}} className='bot'>Cadastre-se</Button>
+                        <Button color="inherit" style={{ fontWeight: "bold" }} className='bot4'>Cadastre-se</Button>
                     </Link>
                </Box>
                 </Toolbar>

@@ -8,17 +8,17 @@ export default function Footer() {
     return (
         <>
             <Grid container direction="row" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", backgroundColor: "#f99e29"  }}>
-                    <Box style={{ backgroundColor: "#f99e29", height: "60px" }}>
+                <Box paddingTop={1} paddingX={3} style={{ backgroundColor: "#f99e29", height: "60px" }}>
                         <Box>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
                         </Box>
                         <Box>
-                            <a target="_blank" href="https://brasil.generation.org">
-                                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
+                            <a target="_blank" className='text-decorator-none2' href="https://brasil.generation.org">
+                                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center" >brasil.generation.org</Typography>
                             </a>
                         </Box>
                     </Box>
-                    <Box display="flex" alignItems="center" justifyContent="center">
+                    <Box paddingX={3} display="flex" alignItems="center" justifyContent="center">
                         <a href="https://www.facebook.com/generationbrasil" target="_blank">
                             <FacebookIcon style={{ fontSize: 40, color: "white" }} />
                         </a>
