@@ -16,7 +16,7 @@ function CadastroPost() {
     const [temas, setTemas] = useState<Tema[]>([])
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
-      );
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -42,16 +42,16 @@ function CadastroPost() {
             palavraChave: ''
         })
     const [postagem, setPostagem] = useState<Postagem>({
-        id: number,
-        titulo: string,
-        texto: string,
-        contato: string,
-        data: string,
-        midia: string,
+        id: 0,
+        titulo: '',
+        texto: '',
+        contato: '',
+        data: '',
+        midia: '',
         tema: null
     })
 
-    useEffect(() => { 
+    useEffect(() => {
         setPostagem({
             ...postagem,
             tema: tema

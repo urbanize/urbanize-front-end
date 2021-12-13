@@ -16,79 +16,79 @@ function Login() {
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
-            nomeCompleto:'',
+            nomeCompleto: '',
             usuario: '',
             foto: '',
             tipo: '',
             senha: '',
             token: ''
         }
-        )
+    )
 
-        const [respUserLogin, setRespUserLogin] = useState<UserLogin>(
-            {
-                id: 0,
-                nomeCompleto:'',
-                usuario: '',
-                foto: '',
-                tipo: '',
-                senha: '',
-                token: ''
-            }
-            )
-
-        function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-
-            setUserLogin({
-                ...userLogin,
-                [e.target.name]: e.target.value
-            })
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>(
+        {
+            id: 0,
+            nomeCompleto: '',
+            usuario: '',
+            foto: '',
+            tipo: '',
+            senha: '',
+            token: ''
         }
+    )
 
-        useEffect(() => {
-       
-            if (respUserLogin.token != '') {
-                dispatch(addToken(respUserLogin.token));
-                dispatch(addName(respUserLogin.nomeCompleto));
-                // adicione dispacth para tipo
-                dispatch(addTipo(respUserLogin.tipo));
-                history.push('/home')
-            }
-        }, [respUserLogin.token])
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
-        async function onSubmit(e: ChangeEvent<HTMLFormElement>){
-            e.preventDefault();
-            try{
-                await login(`/usuarios/logar`, userLogin, setToken)
+        setUserLogin({
+            ...userLogin,
+            [e.target.name]: e.target.value
+        })
+    }
 
-                alert('Usuário logado com sucesso!');
-            }catch(error){
-                alert('Dados do usuário inconsistentes. Erro ao logar!');
-            }
+    useEffect(() => {
+
+        if (respUserLogin.token != '') {
+            dispatch(addToken(respUserLogin.token));
+            dispatch(addName(respUserLogin.nomeCompleto));
+            // adicione dispacth para tipo
+            dispatch(addTipo(respUserLogin.tipo));
+            history.push('/home')
         }
+    }, [respUserLogin.token])
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+        try {
+            await login(`/usuarios/logar`, userLogin, setToken)
+
+            alert('Usuário logado com sucesso!');
+        } catch (error) {
+            alert('Dados do usuário inconsistentes. Erro ao logar!');
+        }
+    }
 
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center' >
             <Grid item xs={6} alignItems='center'>
                 <Box paddingX={18} justify-content='center'>
                     <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Entrar</Typography>
-                            <form onSubmit={onSubmit}>
-                                <Box marginY={4}>
-                                <TextField value={userLogin.usuario} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
-                                </Box>
+                    <form onSubmit={onSubmit}>
+                        <Box marginY={4}>
+                            <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
+                        </Box>
 
-                                <Box marginY={4}>
+                        <Box marginY={4}>
 
-                                <TextField value={userLogin.senha} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password'fullWidth />
+                            <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
 
-                                </Box>
-                               <Typography variant="h5" align="center">
-                                <Button type='submit' variant="contained" color="secondary" className="botao">
-                                    Login
-                                </Button> 
-                                </Typography>
-                                
-                            </form>
+                        </Box>
+                        <Typography variant="h5" align="center">
+                            <Button type='submit' variant="contained" color="secondary" className="botao">
+                                Login
+                            </Button>
+                        </Typography>
+
+                    </form>
                 </Box>
             </Grid>
             <Grid item xs={6} className='imagem4'></Grid>
