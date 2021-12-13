@@ -1,18 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/statics/navbar/NavBar';
+import NavBar from './components/statics/navbarusuario/NavBarUser';
 import Footer from './components/statics/footer/Footer';
 import Home from './components/pages/home/Home';
 import HomeCont from './components/pages/HomeCont/HomeCont';
 import Login from './components/pages/login/Login';
 import CadastroUsuario from './components/pages/cadastro/CadastroUsuario';
+import NavBarUser from './components/statics/navbarusuario/NavBarUser';
 
 function App() {
+
   return (
     <>
       <Router>
-        <NavBar />
+        <NavBarUser/>
         <Switch>
           <div style={{ minHeight: '100vh' }}>
             <Route exact path='/'>
@@ -34,7 +36,6 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-
     </>
   );
 }

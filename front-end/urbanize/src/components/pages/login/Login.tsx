@@ -2,21 +2,40 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { addName, addTipo, addToken } from '../../../store/user/actions';
 import { login } from '../services/Service';
 import UserLogin from '../models/UserLogin';
 import './Login.css';
 
 function Login() {
     let history = useHistory();
+    const dispatch = useDispatch();
     const [token, setToken] = useLocalStorage('token');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
+            nomeCompleto:'',
             usuario: '',
+            foto: '',
+            tipo: '',
             senha: '',
             token: ''
         }
         )
+
+        const [respUserLogin, setRespUserLogin] = useState<UserLogin>(
+            {
+                id: 0,
+                nomeCompleto:'',
+                usuario: '',
+                foto: '',
+                tipo: '',
+                senha: '',
+                token: ''
+            }
+            )
 
         function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
@@ -26,11 +45,16 @@ function Login() {
             })
         }
 
-            useEffect(()=>{
-                if(token != ''){
-                    history.push('/home')
-                }
-            }, [token])
+        useEffect(() => {
+       
+            if (respUserLogin.token != '') {
+                dispatch(addToken(respUserLogin.token));
+                dispatch(addName(respUserLogin.nomeCompleto));
+                // adicione dispacth para tipo
+                dispatch(addTipo(respUserLogin.tipo));
+                history.push('/home')
+            }
+        }, [respUserLogin.token])
 
         async function onSubmit(e: ChangeEvent<HTMLFormElement>){
             e.preventDefault();

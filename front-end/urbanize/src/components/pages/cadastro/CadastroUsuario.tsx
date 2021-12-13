@@ -13,18 +13,24 @@ function CadastroUsuario() {
     const [user, setUser] = useState<User>(
         {
             id: 0,
-            nomeCompleto: '',
+            nomeCompleto:'',
             usuario: '',
+            foto: '',
+            tipo: '',
             senha: ''
-        })
+        }
+        )
 
     const [userResult, setUserResult] = useState<User>(
         {
             id: 0,
-            nomeCompleto: '',
+            nomeCompleto:'',
             usuario: '',
-            senha: '',
-        })
+            foto: '',
+            tipo: '',
+            senha: ''
+        }
+        )
 
     useEffect(() => {
         if (userResult.id != 0) {
