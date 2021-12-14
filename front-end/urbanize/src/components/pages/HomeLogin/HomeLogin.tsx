@@ -20,16 +20,15 @@ function HomeLogin() {
         (state) => state.tipos
     );
 
-<<<<<<< HEAD
-=======
     const foto = useSelector<UserState, UserState["fotos"]>(
         (state) => state.fotos
     );
 
-    var fotoPerfil = foto
+    var fotoPerfil = foto 
+        if (foto=='') {
+            fotoPerfil = "https://i.imgur.com/CYlpvZh.png"
+        }
 
-
->>>>>>> ab6e6b88738ab98cfad8a30ca0fe00000b913d17
     var novaPostagem
     if (tipo == "admin") {
         novaPostagem = <Box marginRight={1}>
@@ -56,26 +55,9 @@ function HomeLogin() {
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
-<<<<<<< HEAD
-                <Grid alignItems="center" item xs={6}>
-                    <Box paddingX={20} >
-                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'>Seja bem vindo(a)!</Typography>
-                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className='titulo'>expresse aqui os seus pensamentos e opiniões!</Typography>
-                    </Box>
-                    <Box display="flex" justifyContent="center">
-                        {novaPostagem}
-                        <Link to="/posts" className="text-decorator-none">
-                            <Button variant="outlined" className='botao'>Ver Postagens</Button>
-                        </Link>
-                    </Box>
-                </Grid>
-                <Grid item xs={6} >
-                    <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
-=======
 
                 <Grid alignItems="center" item xs={4}>
-                    <img src={foto} />
->>>>>>> ab6e6b88738ab98cfad8a30ca0fe00000b913d17
+                    <img src={fotoPerfil} />
                 </Grid>
 
 

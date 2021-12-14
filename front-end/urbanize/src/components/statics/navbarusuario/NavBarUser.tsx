@@ -12,7 +12,7 @@ import './NavBarUser.css';
 function NavBarUser() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
-);
+    );
     const name = useSelector<UserState, UserState["names"]>(
         (state) => state.names
     );
@@ -40,24 +40,24 @@ function NavBarUser() {
     }
     var navbarComponent;
     var cadastrarTema;
-    if(tipo == 'admin'){
-        cadastrarTema =   <Link to="/formularioTema" className="text-decorator-none">
-        <Box mx={1} className='cursor'>
-            <Typography variant="h6" color="inherit">
-                cadastrar tema
-            </Typography>
-        </Box>
-    </Link>
+    if (tipo == 'admin') {
+        cadastrarTema = <Link to="/formularioTema" className="text-decorator-none">
+            <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                    cadastrar tema
+                </Typography>
+            </Box>
+        </Link>
     }
     if (token != "") {
         navbarComponent = <AppBar position="static" style={{ backgroundColor: "#f99e29" }}>
             <Toolbar variant="dense">
                 <Box className='cursor'>
-                <Link to='/homelogin'>
-                <Box paddingLeft={5}>
-                    <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />
-                    </Box>
-                </Link>
+                    <Link to='/homelogin'>
+                        <Box paddingLeft={5}>
+                            <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{ width: "25vh", height: "5vh" }} />
+                        </Box>
+                    </Link>
                 </Box>
 
                 <Box display="flex" justifyContent="start">
@@ -76,7 +76,7 @@ function NavBarUser() {
                         </Box>
                     </Link>
 
-                  {cadastrarTema}
+                    {cadastrarTema}
                     <Box mx={1} className='cursor' onClick={goLogout}>
                         <Typography variant="h6" color="inherit">
                             Logout
@@ -86,26 +86,26 @@ function NavBarUser() {
                 </Box>
             </Toolbar>
         </AppBar>
-    } 
+    }
     else {
         navbarComponent = <AppBar variant="elevation" style={{ backgroundColor: "#f99e29" }} >
-        <Toolbar style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
+            <Toolbar style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
                 <Link to='/home' className='text-decorator-none'>
                     <Box paddingLeft={5}>
-                    <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />
+                        <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{ width: "25vh", height: "5vh" }} />
                     </Box>
                 </Link>
                 <Box paddingRight={5}>
                     <Link to='/login' className='text-decorator-none'>
-                        <Button color="inherit" style={{fontWeight: "bold"}}>Entrar</Button>
-                    </Link>                        
+                        <Button color="inherit" style={{ fontWeight: "bold" }}>Entrar</Button>
+                    </Link>
                     <Link to='/cadastrar' className='text-decorator-none2'>
                         <Button color="inherit" style={{ fontWeight: "bold" }} className='bot4'>Cadastre-se</Button>
                     </Link>
-               </Box>
-                </Toolbar>
-            </AppBar >
-    
+                </Box>
+            </Toolbar>
+        </AppBar >
+
     }
     return (
         <>

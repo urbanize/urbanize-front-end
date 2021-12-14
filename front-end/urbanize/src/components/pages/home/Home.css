@@ -1,14 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap%27);
 
-.imagem3{
-    
-    background-repeat: no-repeat;
-    width: 100vh;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: right;
-}
-
 .bot{
     text-decoration: none;
     border-color: #fafafa;
