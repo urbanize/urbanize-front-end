@@ -2,7 +2,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addName, addTipo, addToken } from '../../../store/user/actions';
+import { addName, addTipo, addToken, addFoto } from '../../../store/user/actions';
 import { login } from '../services/Service';
 import UserLogin from '../models/UserLogin';
 import './Login.css';
@@ -50,7 +50,7 @@ function Login() {
         if (respUserLogin.token != '') {
             dispatch(addToken(respUserLogin.token));
             dispatch(addName(respUserLogin.nomeCompleto));
-            // adicione dispacth para tipo
+            dispatch(addFoto(respUserLogin.foto));
             dispatch(addTipo(respUserLogin.tipo));
             history.push('/homelogin')
         }
