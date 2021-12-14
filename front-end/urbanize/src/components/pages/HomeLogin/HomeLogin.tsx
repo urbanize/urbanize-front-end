@@ -20,6 +20,16 @@ function HomeLogin() {
         (state) => state.tipos
     );
 
+<<<<<<< HEAD
+=======
+    const foto = useSelector<UserState, UserState["fotos"]>(
+        (state) => state.fotos
+    );
+
+    var fotoPerfil = foto
+
+
+>>>>>>> ab6e6b88738ab98cfad8a30ca0fe00000b913d17
     var novaPostagem
     if (tipo == "admin") {
         novaPostagem = <Box marginRight={1}>
@@ -46,6 +56,7 @@ function HomeLogin() {
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
+<<<<<<< HEAD
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'>Seja bem vindo(a)!</Typography>
@@ -60,12 +71,21 @@ function HomeLogin() {
                 </Grid>
                 <Grid item xs={6} >
                     <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
+=======
+
+                <Grid alignItems="center" item xs={4}>
+                    <img src={foto} />
+>>>>>>> ab6e6b88738ab98cfad8a30ca0fe00000b913d17
                 </Grid>
-                <Grid xs={12} className='postagens'>
-                    <TabPostagem />
+
+
+                <Grid item xs={8} >
+
                 </Grid>
             </Grid>
+
         </>
+
     );
 }
 
