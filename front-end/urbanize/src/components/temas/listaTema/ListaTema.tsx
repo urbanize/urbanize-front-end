@@ -50,7 +50,7 @@ function ListaTema() {
     }, [temas.length])
 
     var botoes: string
-    if (tipo != "Admin") {
+    if (tipo != "admin") {
         botoes = "bottom-none"
     }
 
@@ -66,6 +66,9 @@ function ListaTema() {
                                 </Typography>
                                 <Typography variant="h5" component="h2">
                                     {tema.descricao}
+                                </Typography>
+                                <Typography variant="h5" component="h2">
+                                    {tema.palavraChave}
                                 </Typography>
                             </CardContent>
                             <CardActions>

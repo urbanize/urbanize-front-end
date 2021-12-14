@@ -52,7 +52,7 @@ function ListaPostagem() {
   }, [posts.length])
 
   var botoes: string
-  if (tipo != "Admin") {
+  if (tipo != "admin") {
     botoes = "bottom-none"
   }
 
