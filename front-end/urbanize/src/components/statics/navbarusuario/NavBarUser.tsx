@@ -36,7 +36,7 @@ function NavBarUser() {
             theme: "colored",
             progress: undefined,
         });
-        history.push('/home')
+        history.push('/login')
     }
     var navbarComponent;
     var cadastrarTema;
@@ -53,7 +53,7 @@ function NavBarUser() {
         navbarComponent = <AppBar position="static" style={{ backgroundColor: "#f99e29" }}>
             <Toolbar variant="dense">
                 <Box className='cursor'>
-                <Link to='/home' className='text-decorator-none'>
+                <Link to='/homelogin' className='text-decorator-none'>
                     <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />  
                 </Link>
                 </Box>
