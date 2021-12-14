@@ -7,8 +7,8 @@ export default function Home() {
 	return (
 		<>
 			<Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#f99e29" }}>
-				<Grid  item xs={6}>
-					<Box paddingX={20} >
+				<Grid  item xs={5}>
+					<Box paddingLeft={8} paddingTop={3} >
 						<Typography className='font' variant="h2" gutterBottom color="textPrimary" component="h2" align="left" style={{ color: "#424242", fontWeight: "bold" }}>TRANSFORME HOJE A REALIDADE DE UM BAIRRO.</Typography>
 						<Typography className='font' variant="h5" gutterBottom color="textPrimary" component="h5" align="left" style={{ color: "white", fontWeight: "bold" }}>CONTE SUA HISTÓRIA OU ENCONTRE UMA PARA APOIAR.</Typography>
 					</Box>
@@ -23,7 +23,11 @@ export default function Home() {
 						</Box>
 					</Box>
 				</Grid>
-				<Grid item xs={6} className='imagem3'></Grid>
+				<Grid item xs={7}>
+					<Box paddingLeft={12} paddingTop={3}>
+					<img src="https://i.imgur.com/WewRlkd.png" alt="" width='650px' height='650px'/>
+					</Box>	
+					</Grid>
 			</Grid>
 		</>
 	);

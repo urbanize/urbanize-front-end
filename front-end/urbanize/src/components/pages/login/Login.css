@@ -21,8 +21,12 @@
 
 .botao{
     border-radius: 6px!important;
-    background-color: white!important;
-    border: 1px solid #c4c4c4!important;
-    color: #424242!important;
-    margin-right: 50px !important
+    background-color: #f99e29!important;
+    color: white!important;
+    font-weight: bold!important;
+    margin-bottom: 10px!important;
+}
+
+.texto-login {
+    color: #807c7c!important;
 }

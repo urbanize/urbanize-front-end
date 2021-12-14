@@ -15,12 +15,11 @@ function HomeLogin() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
-    // const tipo 
+
     const tipo = useSelector<UserState, UserState["tipos"]>(
         (state) => state.tipos
     );
 
-    // adicione a var novaPostagem e coloque o if de validação de tipo para verificar se o usuário é admin
     var novaPostagem
     if (tipo == "admin") {
         novaPostagem = <Box marginRight={1}>
@@ -54,7 +53,6 @@ function HomeLogin() {
                     </Box>
                     <Box display="flex" justifyContent="center">
                         {novaPostagem}
-                        {/* // coloque a novaPostagem */}
                         <Link to="/posts" className="text-decorator-none">
                             <Button variant="outlined" className='botao'>Ver Postagens</Button>
                         </Link>

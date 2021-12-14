@@ -1,10 +1,11 @@
 .caixa{
-    background-color: #3F51B5;
+    background-color: white;
 }
 
 .titulo{
-   color: white !important;
-   font-weight: bold !important;
+    color: #807c7c!important;
+    font-weight: bold !important;
+    font-family: 'Source Sans Pro', sans-serif!important;
 }
 
 .botao{

@@ -53,8 +53,10 @@ function NavBarUser() {
         navbarComponent = <AppBar position="static" style={{ backgroundColor: "#f99e29" }}>
             <Toolbar variant="dense">
                 <Box className='cursor'>
-                <Link to='/homelogin' className='text-decorator-none'>
-                    <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />  
+                <Link to='/homelogin'>
+                <Box paddingLeft={5}>
+                    <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />
+                    </Box>
                 </Link>
                 </Box>
 
@@ -62,14 +64,14 @@ function NavBarUser() {
                     <Link to="/posts" className="text-decorator-none">
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
-                                postagens
+                                Postagens
                             </Typography>
                         </Box>
                     </Link>
                     <Link to="/temas" className="text-decorator-none">
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
-                                temas
+                                Temas
                             </Typography>
                         </Box>
                     </Link>
@@ -77,7 +79,7 @@ function NavBarUser() {
                   {cadastrarTema}
                     <Box mx={1} className='cursor' onClick={goLogout}>
                         <Typography variant="h6" color="inherit">
-                            logout
+                            Logout
                         </Typography>
                     </Box>
 
@@ -89,9 +91,11 @@ function NavBarUser() {
         navbarComponent = <AppBar variant="elevation" style={{ backgroundColor: "#f99e29" }} >
         <Toolbar style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
                 <Link to='/home' className='text-decorator-none'>
-                    <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />  
+                    <Box paddingLeft={5}>
+                    <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{width: "25vh", height: "5vh" }} />
+                    </Box>
                 </Link>
-                <Box paddingLeft={25}>
+                <Box paddingRight={5}>
                     <Link to='/login' className='text-decorator-none'>
                         <Button color="inherit" style={{fontWeight: "bold"}}>Entrar</Button>
                     </Link>                        
