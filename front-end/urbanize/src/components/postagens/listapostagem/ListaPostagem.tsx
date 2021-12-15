@@ -63,13 +63,10 @@ function ListaPostagem() {
           <Box m={2} >
             <Card variant="outlined">
               <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  Postagens
-                </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
                   {post.titulo}
                 </Typography>
-                <Typography variant="body2" component="p">
+                <Typography  className='fonte-texto' variant="body2" component="p">
                   {post.texto}
                 </Typography>
                 <Typography variant="body2" component="p">
@@ -87,7 +84,7 @@ function ListaPostagem() {
                   </Link>
                   <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button type='submit' variant='contained' className='btnCancelar'>
+                      <Button type='submit' variant='outlined' className='btnCancelar'>
                         deletar
                       </Button>
                     </Box>

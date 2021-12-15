@@ -68,17 +68,22 @@ function HomeLogin() {
                             <Card variant="outlined">
                                 <CardContent >
                                     <img src={fotoPerfil}  className='foto-perfil' />
-                                    <Typography variant="h5" component="h2" align='center' style={{marginTop: 10}}>
+                                    <Typography  className='fonte-titulos-nome' variant="h5" component="h2" align='center' style={{marginTop: 10}}>
                                         {nomeUsuario}
                                     </Typography>
                                     
                                 </CardContent>
                             </Card>
                             <Box className='cardEstilo outrabox'>
+                                <Box className='alinhar-itens' m={2} >
+                                    <Box className='alinhar-itens'>
                                 <ModalPostagem />
                                 <Button type='submit' variant='outlined' className='btnPadding'>
                                     MINHAS POSTAGENS
+                                        
                                 </Button>
+                                </Box>
+                                </Box>
                         </Box>
                         </Box>
                     </Grid>

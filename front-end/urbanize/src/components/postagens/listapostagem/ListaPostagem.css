@@ -22,4 +22,14 @@
     margin-left: 45px !important
 }
 
+.fonte-titulos{
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif!important;
+    color: #505050;
+}
+
+.fonte-texto{
+    font-family: Helvetica;
+}
+
 
