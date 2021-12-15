@@ -2,7 +2,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addName, addTipo, addToken, addFoto } from '../../../store/user/actions';
+import { addName, addTipo, addToken, addFoto, addId, addEndereco, addBio } from '../../../store/user/actions';
 import { login } from '../services/Service';
 import UserLogin from '../models/UserLogin';
 import './Login.css';
@@ -19,7 +19,9 @@ function Login() {
             tipo: '',
             foto: '',
             senha: '',
-            token: ''
+            token: '',
+            bio: '',
+            endereco: ''
         }
     )
 
@@ -31,7 +33,9 @@ function Login() {
             tipo: '',
             foto: '',
             senha: '',
-            token: ''
+            token: '',
+            bio: '',
+            endereco: ''
         }
     )
 
@@ -52,6 +56,9 @@ function Login() {
             dispatch(addName(respUserLogin.nomeCompleto));
             dispatch(addFoto(respUserLogin.foto));
             dispatch(addTipo(respUserLogin.tipo));
+            dispatch(addId(respUserLogin.id));
+            dispatch(addBio(respUserLogin.bio));
+            dispatch(addEndereco(respUserLogin.endereco));
             history.push('/homelogin')
         }
     }, [respUserLogin.token])

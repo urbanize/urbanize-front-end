@@ -11,6 +11,7 @@ interface Postagem{
     midia: string;
     tema?: Tema| null;
     usuario?: UserLogin| null
+    endereco: string;
 }
 
 export default Postagem;

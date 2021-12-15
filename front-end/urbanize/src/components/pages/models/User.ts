@@ -5,6 +5,8 @@ interface User {
     tipo: string;
     foto: string;
     senha: string;
+    bio: string;
+    endereco: string;
 }
 
 export default User;

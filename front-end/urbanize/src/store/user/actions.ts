@@ -1,4 +1,4 @@
-export type Action = {type: "ADD_TOKEN"|"ADD_NAME"|"ADD_TIPO"|"ADD_FOTO"; payload: string};
+export type Action = {type: "ADD_TOKEN"|"ADD_NAME"|"ADD_TIPO"|"ADD_FOTO"|"ADD_ID"|"ADD_BIO"|"ADD_ENDERECO"; payload: any};
 
 export const addToken = (token: string): Action =>({
     type: "ADD_TOKEN",
@@ -18,4 +18,16 @@ export const addTipo = (tipo: string): Action =>({
 export const addFoto = (foto: string): Action =>({
     type: "ADD_FOTO",
     payload: foto,
+});
+export const addId = (id: number): Action =>({
+    type: "ADD_ID",
+    payload: id,
+});
+export const addBio = (bio: string): Action =>({
+    type: "ADD_BIO",
+    payload: bio,
+});
+export const addEndereco = (endereco: string): Action =>({
+    type: "ADD_ENDERECO",
+    payload: endereco,
 });

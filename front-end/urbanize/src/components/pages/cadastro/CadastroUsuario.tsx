@@ -17,7 +17,9 @@ function CadastroUsuario() {
             usuario: '',
             foto: '',
             tipo: '',
-            senha: ''
+            senha: '',
+            bio: '',
+            endereco: ''
         }
     )
 
@@ -28,7 +30,9 @@ function CadastroUsuario() {
             usuario: '',
             foto: '',
             tipo: '',
-            senha: ''
+            senha: '',
+            bio:'',
+            endereco:''
         }
     )
 

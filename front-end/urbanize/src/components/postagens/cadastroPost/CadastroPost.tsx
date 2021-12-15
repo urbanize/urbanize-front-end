@@ -49,7 +49,8 @@ function CadastroPost() {
         contato: '',
         data: '',
         midia: '',
-        tema: null
+        tema: null,
+        endereco: ''
     })
 
     useEffect(() => {

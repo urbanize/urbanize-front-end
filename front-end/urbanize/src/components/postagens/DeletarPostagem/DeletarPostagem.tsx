@@ -5,7 +5,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import Postagem from '../../pages/models/Postagem';
 import { buscaId, deleteId } from '../../pages/services/Service';
 import { useSelector } from 'react-redux';
-
 import { toast } from 'react-toastify';
 import { UserState } from '../../../store/user/userReducer';
 
