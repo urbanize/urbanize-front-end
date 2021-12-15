@@ -14,7 +14,11 @@ public class UsuarioLogin {
 
 	private String foto;
 	
-	private String tipo;	
+	private String tipo;
+
+	private String bio;
+	
+	private String endereco;
 	
 	public long getId() {
 		return id;
@@ -72,7 +76,19 @@ public class UsuarioLogin {
 		this.token = token;
 	}
 	
-	
-	
+	public String getEndereco(){
+		return endereco;
+	}
 
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getBio(){
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
 }
