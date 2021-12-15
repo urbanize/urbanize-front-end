@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Typography, Box, Grid, Button } from '@material-ui/core';
+import { Typography, Box, Grid, Button, Card, CardContent } from '@material-ui/core';
 import TabPostagem from '../../postagens/tabPostagem/TabPostagem';
 import ModalPostagem from '../../postagens/modalPostagem/ModalPostagem';
 import './HomeLogin.css';
@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { UserState } from '../../../store/user/userReducer';
+import ListaPostagem from '../../postagens/listapostagem/ListaPostagem';
 
 function HomeLogin() {
 
@@ -24,10 +25,16 @@ function HomeLogin() {
         (state) => state.fotos
     );
 
-    var fotoPerfil = foto 
-        if (foto=='') {
-            fotoPerfil = "https://i.imgur.com/CYlpvZh.png"
-        }
+    const nome = useSelector<UserState, UserState["names"]>(
+        (state) => state.names
+    );
+
+    var fotoPerfil = foto
+    if (foto == '') {
+        fotoPerfil = "https://i.imgur.com/CYlpvZh.png"
+    }
+
+    var nomeUsuario = nome
 
     var novaPostagem
     if (tipo == "admin") {
@@ -54,16 +61,35 @@ function HomeLogin() {
     }, [token])
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
+            <Grid container flex-direction="column" justifyContent="center" alignItems="center" className='caixa'>
+                <Box className='outrabox' paddingTop={5}>
+                    <Grid alignItems="center" item xs={4}>
+                        <Box className='box cardEstilo' paddingLeft={7} m={2}>
+                            <Card variant="outlined">
+                                <CardContent >
+                                    <img src={fotoPerfil}  className='foto-perfil' />
+                                    <Typography variant="h5" component="h2" align='center' style={{marginTop: 10}}>
+                                        {nomeUsuario}
+                                    </Typography>
+                                    
+                                </CardContent>
+                            </Card>
+                            <Box className='cardEstilo outrabox'>
+                                <ModalPostagem />
+                                <Button type='submit' variant='outlined' className='btnPadding'>
+                                    MINHAS POSTAGENS
+                                </Button>
+                        </Box>
+                        </Box>
+                    </Grid>
 
-                <Grid alignItems="center" item xs={4}>
-                    <img src={fotoPerfil} />
-                </Grid>
 
-
-                <Grid item xs={8} >
-
-                </Grid>
+                    <Grid alignItems="center" item xs={8} >
+                        <Box className='box' paddingRight={7}>
+                            <ListaPostagem />
+                        </Box>
+                    </Grid>
+                </Box>
             </Grid>
 
         </>
