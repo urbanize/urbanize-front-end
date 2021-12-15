@@ -2,14 +2,7 @@ package br.org.generation.urbanize.model;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -23,18 +16,22 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date data = new java.sql.Date(System.currentTimeMillis());
+
 	@Size (max = 1000)
 	private String texto;
 
 	@NotBlank(message = "O título é obrigatório")
 	private String titulo;
 
-	@NotBlank(message = "A mídia é obrigatória")
+	@NotBlank(message = "A midia é obrigatória")
 	@Size (max = 1000)
 	private String midia;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date data = new java.sql.Date(System.currentTimeMillis());
+	@NotBlank(message = "O endereço é obrigatório")
+	@Size(min = 10, max = 255)
+	private String endereco;
 
 	@NotBlank(message = "O contato é obrigatório")
 	@Size (min = 10)
@@ -112,4 +109,11 @@ public class Postagem {
 		this.usuario = usuario;
 	}
 
+	public String getEndereco(){
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
 }

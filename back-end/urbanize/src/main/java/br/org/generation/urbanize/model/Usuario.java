@@ -2,13 +2,7 @@ package br.org.generation.urbanize.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -37,7 +31,14 @@ public class Usuario {
 	@Size(min = 8 , message = "A senha deve conter no mínimo 8 caracteres")
 	private String senha;
 
-	
+	@NotBlank(message = "O endereço é obrigatório")
+	@Size(min = 10, max = 255)
+	private String endereco;
+
+	@NotBlank(message = "O atributo bio é obrigatório")
+	@Size(min = 10, max = 255)
+	private String bio;
+
 	private String foto;
 	
 	private String tipo;
@@ -102,6 +103,20 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
 
+	public String getEndereco(){
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getBio(){
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
 }
