@@ -23,18 +23,23 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date data = new java.sql.Date(System.currentTimeMillis());
+
 	@Size (max = 1000)
 	private String texto;
 
 	@NotBlank(message = "O título é obrigatório")
 	private String titulo;
 
-	@NotBlank(message = "A mídia é obrigatória")
+	//alterado o nome do atributo de mídia pra foto
+	@NotBlank(message = "A foto é obrigatória")
 	@Size (max = 1000)
-	private String midia;
+	private String foto;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date data = new java.sql.Date(System.currentTimeMillis());
+	@NotBlank(message = "O endereço é obrigatório")
+	@Size(min = 10, max = 255)
+	private String endereco;
 
 	@NotBlank(message = "O contato é obrigatório")
 	@Size (min = 10)
@@ -72,12 +77,12 @@ public class Postagem {
 		this.titulo = titulo;
 	}
 
-	public String getMidia() {
-		return midia;
+	public String getFoto() {
+		return foto;
 	}
 
-	public void setMidia(String midia) {
-		this.midia = midia;
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public Date getData() {
@@ -112,4 +117,11 @@ public class Postagem {
 		this.usuario = usuario;
 	}
 
+	public String getEndereco(){
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
 }
