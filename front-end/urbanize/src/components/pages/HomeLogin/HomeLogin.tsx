@@ -76,15 +76,15 @@ function HomeLogin() {
                     <Grid alignItems="center" item xs={4}>
                         <Box className='box cardEstilo' paddingLeft={7} m={2}>
                             <Card variant="outlined">
-                                <CardContent >
+                                <CardContent className='box' >
                                     <img src={fotoPerfil}  className='foto-perfil' />
                                     <Typography  className='fonte-titulos-nome' variant="h5" component="h2" align='center' style={{marginTop: 10}}>
                                         {nomeUsuario}
                                     </Typography>
-                                    <Typography  className='fonte-titulos-nome' variant="h5" component="h2" align='center'>
+                                    <Typography  className='fonte-titulos-nome' component="h6" align='center'>
                                         {enderecoUsuario}
                                     </Typography>
-                                    <Typography  className='fonte-titulos-nome' variant="h5" component="h2" align='center'>
+                                    <Typography  className='fonte-titulos-nome' component="h6" align='center'>
                                         {bioUsuario}
                                     </Typography>
                                     
