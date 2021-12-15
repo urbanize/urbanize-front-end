@@ -18,6 +18,7 @@ import store from './store/store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavBarUser from './components/statics/navbarusuario/NavBarUser';
+import ListaPostagemUser from './components/postagens/listapostagemuser/ListaPostagemUser';
 
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
               <ListaTema />
             </Route>
             <Route path='/posts'>
-              <ListaPostagem />
+              <ListaPostagemUser />
             </Route>
 
             <Route exact path='/formularioPostagem'>

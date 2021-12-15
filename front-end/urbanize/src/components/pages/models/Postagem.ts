@@ -1,6 +1,6 @@
 
 import Tema from './Tema'
-import UserLogin from './UserLogin';
+import User from './User';
 
 interface Postagem{
     id: number;
@@ -10,7 +10,7 @@ interface Postagem{
     data: string;
     midia: string;
     tema?: Tema| null;
-    usuario?: UserLogin| null
+    usuario?: User| null
     endereco: string;
 }
 

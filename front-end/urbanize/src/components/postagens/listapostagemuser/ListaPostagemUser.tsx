@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom'
 import Postagem from '../../pages/models/Postagem';
 import { busca } from '../../pages/services/Service';
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import './ListaPostagem.css';
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { UserState } from '../../../store/user/userReducer';
 
-function ListaPostagem() {
+function ListaPostagemUser() {
     const [posts, setPosts] = useState<Postagem[]>([])
     let history = useHistory();
 
@@ -58,16 +57,17 @@ function ListaPostagem() {
     if (tipo != "admin") {
         botoes = "bottom-none"
     }
-    
+
 
 
     return (
-        
+
         <>
             {
-                posts.map(post => (
-                    
-                    <Box m={2} >
+                posts.forEach(post => {
+                    if (post.usuario?.id == id){
+
+                        <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
@@ -103,14 +103,12 @@ function ListaPostagem() {
                             </CardActions>
                         </Card>
                     </Box>
-                    
-                    ))
+                    }
+                })
             }
         </>
 
-        );
+    );
 }
 
-
-
-export default ListaPostagem;
+export default ListaPostagemUser;

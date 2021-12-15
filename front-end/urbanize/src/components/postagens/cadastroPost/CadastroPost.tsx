@@ -4,6 +4,7 @@ import './CadastroPost.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Tema from '../../pages/models/Tema';
 import Postagem from '../../pages/models/Postagem';
+import User from '../../../components/pages/models/User';
 import { busca, buscaId, post, put } from '../../pages/services/Service';
 import { useSelector } from 'react-redux';
 
@@ -17,6 +18,8 @@ function CadastroPost() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
+
+    const idUser = useSelector<UserState, UserState["ids"]>((state) => state.ids);
 
     useEffect(() => {
         if (token == "") {
@@ -35,6 +38,18 @@ function CadastroPost() {
         }
     }, [token])
 
+    const [user, setUser] = useState<User>(
+       {    
+            id: idUser,
+            nomeCompleto: '',
+            usuario: '',
+            tipo: '',
+            foto: '',
+            senha: '',
+            bio: '',
+            endereco: ''
+        })
+
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
@@ -49,14 +64,16 @@ function CadastroPost() {
         contato: '',
         data: '',
         midia: '',
+        endereco: '',
         tema: null,
-        endereco: ''
+        usuario: null
     })
 
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: user
         })
     }, [tema])
 
@@ -88,7 +105,8 @@ function CadastroPost() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario: user
         })
 
     }
@@ -134,7 +152,7 @@ function CadastroPost() {
     }
 
     function back() {
-        history.push('/posts')
+        history.push('/postsuser')
     }
 
     return (
@@ -163,7 +181,7 @@ function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button  type="submit" variant="contained" color="primary">
                         Finalizar
                     </Button>
                 </FormControl>
