@@ -32,10 +32,9 @@ public class Postagem {
 	@NotBlank(message = "O título é obrigatório")
 	private String titulo;
 
-	//alterado o nome do atributo de mídia pra foto
-	@NotBlank(message = "A foto é obrigatória")
+	@NotBlank(message = "A midia é obrigatória")
 	@Size (max = 1000)
-	private String foto;
+	private String midia;
 
 	@NotBlank(message = "O endereço é obrigatório")
 	@Size(min = 10, max = 255)
@@ -77,12 +76,12 @@ public class Postagem {
 		this.titulo = titulo;
 	}
 
-	public String getFoto() {
-		return foto;
+	public String getMidia() {
+		return midia;
 	}
 
-	public void setFoto(String foto) {
-		this.foto = foto;
+	public void setMidia(String midia) {
+		this.midia = midia;
 	}
 
 	public Date getData() {
