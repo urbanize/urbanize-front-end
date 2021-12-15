@@ -21,3 +21,40 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.foto-perfil{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    align-self: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: initial;
+}
+
+.outrabox{
+    display: flex;
+    flex-direction: row;
+}
+.cardEstilo{
+    align-items: center;
+}
+
+.btnCancelar{
+    background-color: white!important;
+    color: #f99e29!important;
+    font-weight: bold!important;
+    margin-right: 45px !important;
+}
+
+.btnPadding{
+    background-color: white!important;
+    color: #f99e29!important;
+    font-weight: bold!important;
+    margin-right: 45px !important;
+
+    
+}
