@@ -29,12 +29,22 @@ function HomeLogin() {
         (state) => state.names
     );
 
+    const bio = useSelector<UserState, UserState["bios"]>(
+        (state) => state.bios
+    );
+
+    const endereco = useSelector<UserState, UserState["enderecos"]>(
+        (state) => state.enderecos
+    );
+
     var fotoPerfil = foto
     if (foto == '') {
         fotoPerfil = "https://i.imgur.com/CYlpvZh.png"
     }
 
     var nomeUsuario = nome
+    var enderecoUsuario = endereco
+    var bioUsuario = bio
 
     var novaPostagem
     if (tipo == "admin") {
@@ -71,6 +81,12 @@ function HomeLogin() {
                                     <Typography  className='fonte-titulos-nome' variant="h5" component="h2" align='center' style={{marginTop: 10}}>
                                         {nomeUsuario}
                                     </Typography>
+                                    <Typography  className='fonte-titulos-nome' variant="h5" component="h2" align='center'>
+                                        {enderecoUsuario}
+                                    </Typography>
+                                    <Typography  className='fonte-titulos-nome' variant="h5" component="h2" align='center'>
+                                        {bioUsuario}
+                                    </Typography>
                                     
                                 </CardContent>
                             </Card>
@@ -79,8 +95,7 @@ function HomeLogin() {
                                     <Box className='alinhar-itens'>
                                 <ModalPostagem />
                                 <Button type='submit' variant='outlined' className='btnPadding'>
-                                    MINHAS POSTAGENS
-                                        
+                                    MINHAS POSTAGENS 
                                 </Button>
                                 </Box>
                                 </Box>
