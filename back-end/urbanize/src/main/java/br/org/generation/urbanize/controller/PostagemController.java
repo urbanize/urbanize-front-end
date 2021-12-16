@@ -1,6 +1,7 @@
 package br.org.generation.urbanize.controller;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import javax.validation.Valid;
 
@@ -33,6 +34,18 @@ public class PostagemController {
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<Postagem>> getByTitulo(@PathVariable String titulo) {
 		return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
+	}
+
+	@GetMapping("/usario/{id}")
+	public ResponseEntity<List<Postagem>> getByUsuarioId(@PathVariable long id) {
+		List<Postagem> listPost = postagemRepository.findAll();
+		List<Postagem> postUser = new ArrayList();
+		for (Postagem post : listPost) {
+			if (post.getUsuario().getId() == id){
+				postUser.add(post);
+			}
+		}
+		return ResponseEntity.ok(postUser);
 	}
 
 	@PostMapping

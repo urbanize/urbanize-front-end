@@ -66,6 +66,9 @@ function ListaPostagem() {
                 <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
                   {post.titulo}
                 </Typography>
+                <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
+                  {post.usuario?.nomeCompleto}
+                </Typography>
                 <Typography  className='fonte-texto' variant="body2" component="p">
                   {post.texto}
                 </Typography>
