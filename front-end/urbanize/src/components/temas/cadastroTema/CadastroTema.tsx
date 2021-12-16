@@ -115,7 +115,7 @@ function CadastroTema() {
                 <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <TextField value={tema.palavraChave} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="palavraChave" label="palavraChave" variant="outlined" name="palavraChave" margin="normal" fullWidth />
                 <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="tema" variant="outlined" name="tema" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" className='btn-finalizar'>
                     Finalizar
                 </Button>
             </form>

@@ -91,8 +91,10 @@ function NavBarUser() {
         navbarComponent = <AppBar variant="elevation" style={{ backgroundColor: "#f99e29" }} >
             <Toolbar style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
                 <Link to='/home' className='text-decorator-none'>
-                    <Box paddingLeft={5}>
+                    <Box paddingLeft={4}>
+                        <Box>
                         <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{ width: "25vh", height: "5vh" }} />
+                        </Box>
                     </Box>
                 </Link>
                 <Box paddingRight={5}>

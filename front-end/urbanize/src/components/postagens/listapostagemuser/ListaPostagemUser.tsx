@@ -5,14 +5,15 @@ import { busca } from '../../pages/services/Service';
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import { useHistory } from 'react-router-dom'
 import './ListaPostagemUser.css';
-import PostEmpty from './PostEmpty';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { UserState } from '../../../store/user/userReducer';
 
 function ListaPostagemUser() {
-    const [posts, setPosts] = useState<Postagem[]>([])
     let history = useHistory();
+
+    const [posts, setPosts] = useState<Postagem[]>([])
+    const [postsTratado, setPostsTratado] = useState<Postagem[]>([])
 
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
@@ -42,7 +43,7 @@ function ListaPostagemUser() {
     }, [token])
 
     async function getPost() {
-        await busca("/postagens", setPosts, {
+        await busca(`/postagens`, setPosts, {
             headers: {
                 'Authorization': token
             }
@@ -56,26 +57,32 @@ function ListaPostagemUser() {
     }, [posts.length])
 
     var botoes: string
-    if (tipo != "admin") {
-        botoes = "bottom-none"
-    }
+    
+    posts.map(item => {
+        if (item.usuario?.id == id) {
+            postsTratado.push(item)
+        }
+    })
+
 
     return (
         <>
             {
-                posts.forEach(post => {
-                    if (post.usuario?.id === id){
-                        <Box m={2} >
+                postsTratado.map(post => (
+                    <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>
-                                <Typography color="textSecondary" gutterBottom>
-                                    Postagens
-                                </Typography>
-                                <Typography variant="h5" component="h2">
+                                <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
                                     {post.titulo}
                                 </Typography>
-                                <Typography variant="body2" component="p">
+                                <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
+                                    {post.usuario?.nomeCompleto}
+                                </Typography>
+                                <Typography className='fonte-texto' variant="body2" component="p">
                                     {post.texto}
+                                </Typography>
+                                <Typography variant="body2" component="p">
+                                    {post.endereco}
                                 </Typography>
                                 <Typography variant="body2" component="p">
                                     {post.tema?.descricao}
@@ -85,14 +92,14 @@ function ListaPostagemUser() {
                                 <Box display="flex" justifyContent="center" className={botoes} mb={1.5}>
                                     <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                                         <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                            <Button variant='contained' className='botao2' >
                                                 atualizar
                                             </Button>
                                         </Box>
                                     </Link>
                                     <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
+                                            <Button type='submit' variant='outlined' className='btnCancelar'>
                                                 deletar
                                             </Button>
                                         </Box>
@@ -101,10 +108,7 @@ function ListaPostagemUser() {
                             </CardActions>
                         </Card>
                     </Box>
-                    } else {
-                        <PostEmpty/>
-                    }
-                })
+                ))
             }
         </>
     );

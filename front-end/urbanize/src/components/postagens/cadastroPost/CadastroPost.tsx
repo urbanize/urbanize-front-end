@@ -39,7 +39,7 @@ function CadastroPost() {
     }, [token])
 
     const [user, setUser] = useState<User>(
-       {    
+        {
             id: idUser,
             nomeCompleto: '',
             usuario: '',
@@ -113,7 +113,7 @@ function CadastroPost() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-            console.log(JSON.stringify(postagem))
+        console.log(JSON.stringify(postagem))
         if (id !== undefined) {
             put(`/postagens`, postagem, setPostagem, {
                 headers: {
@@ -152,18 +152,18 @@ function CadastroPost() {
     }
 
     function back() {
-        history.push('/homelogin')
+        history.push('/posts')
     }
 
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.contato} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="contato" label="contato" name="contato" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="endereco" label="endereço" name="endereco" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.midia} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="midia" label="midia" name="midia" variant="outlined" margin="normal" fullWidth />
+                <Typography variant="h4" color="textSecondary" component="h4" align="center" >CADASTRAR NOVA POSTAGEM</Typography>
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.contato} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="contato" label="E-mail" name="contato" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="endereco" label="Local do Projeto" name="endereco" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.midia} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="midia" label="Link da foto" name="midia" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
@@ -182,7 +182,7 @@ function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button  type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" className='btn-cadastrar-post'>
                         Finalizar
                     </Button>
                 </FormControl>
