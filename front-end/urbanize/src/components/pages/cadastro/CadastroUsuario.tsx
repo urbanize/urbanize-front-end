@@ -4,6 +4,7 @@ import User from '../models/User';
 import { cadastroUsuario } from '../services/Service';
 import { Grid, Box, Typography, Button, TextField } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import './CadastroUsuario.css';
 
 function CadastroUsuario() {
@@ -59,10 +60,33 @@ function CadastroUsuario() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if (confirmarSenha == user.senha) {
-            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            alert('Usuario cadastrado com sucesso')
+            try {
+                await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+                toast.success('Usuário cadastrado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+            } catch (error) {
+                toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+            }
+
         } else {
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            alert('Senhas incompatíveis!')
         }
     }
     return (
@@ -76,12 +100,21 @@ function CadastroUsuario() {
                 <Box paddingX={18} alignItems='center'>
                     <form onSubmit={onSubmit}>
                         <Typography variant='h2' gutterBottom color='textPrimary' component='h2' align='center' className='textos2'>Cadastrar</Typography>
+<<<<<<< HEAD
                         <TextField value={user.nomeCompleto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nomeCompleto' label='Nome' variant='outlined' name='nomeCompleto' margin='normal' fullWidth />
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
                         <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='Bio (um pouco sobre você)' variant='outlined' name='bio' margin='normal' fullWidth />
                         <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereco' label='Cidade' variant='outlined' name='endereco' margin='normal' fullWidth />
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
+=======
+                        <TextField value={user.nomeCompleto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nomeCompleto' label='nome' variant='outlined' name='nomeCompleto' margin='normal' fullWidth />
+                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
+                        <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='um pouco sobre você' variant='outlined' name='bio' margin='normal' fullWidth />
+                        <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereco' label='bairro' variant='outlined' name='endereco' margin='normal' fullWidth />
+                        <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmar senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
+>>>>>>> 3905cf66cca6b895f5e25a91f3f8dff48bad465d
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/home' className='text-decorator-none'>
                                 <Button variant='contained' className='btnCancelar'>
