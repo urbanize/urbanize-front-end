@@ -19,6 +19,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavBarUser from './components/statics/navbarusuario/NavBarUser';
 import ListaPostagemUser from './components/postagens/listapostagemuser/ListaPostagemUser';
+import SobreNos from './components/pages/SobreNos/SobreNos';
+
+
 
 
 function App() {
@@ -78,7 +81,10 @@ function App() {
             <Route path='/postsuser'>
               <ListaPostagemUser />
             </Route>
-
+            <Route path='/sobreNos'>
+              <SobreNos/>
+            </Route>
+            
           </div>
         </Switch>
         <Footer />

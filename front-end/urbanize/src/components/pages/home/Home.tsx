@@ -19,7 +19,9 @@ export default function Home() {
 							</Link>
 						</Box>
 						<Box>
+							<Link to='/sobreNos' className='text-decorator-none'>
 							<Button className='bot2' style={{ fontWeight: "bold" }}>NOS CONHEÇA MELHOR</Button>
+							</Link>
 						</Box>
 					</Box>
 				</Grid>

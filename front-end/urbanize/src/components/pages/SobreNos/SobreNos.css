@@ -1,0 +1,11 @@
+.box-texto{
+    padding-top: 85px;
+    color: #807c7c!important;
+    font-weight: bold !important;
+    font-family: 'Source Sans Pro', sans-serif!important;
+    
+}
+.box-fotos{
+    display: flex;
+    direction: row;
+}
