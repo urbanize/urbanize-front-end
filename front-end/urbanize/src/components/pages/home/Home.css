@@ -5,14 +5,16 @@
     border-color: #fafafa;
     background: #fafafa!important;
     color: #f99e29!important;
-    margin-right: 10px!important;
+    padding-left: 7;
+    
+    
 }
 .bot2{
     text-decoration: none;
-    border-color: #fafafa;
+    border: 1px solid #fafafa !important;
     background: #f99e29!important;
     color: #fafafa!important;
-    margin-right: 110px!important;
+    padding-left: 7;
 }
 
 .text-decorator-none{
@@ -22,4 +24,13 @@
 .font{
 font-family: 'Source Sans Pro', sans-serif;
 }
+
+.teste{
+    display: flex !important;
+    justify-content: flex-end;
+}
+
+
+
+
 
