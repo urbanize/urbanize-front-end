@@ -32,7 +32,7 @@ public class Usuario {
 	private String senha;
 
 	@NotBlank(message = "O endereço é obrigatório")
-	@Size(min = 10, max = 255)
+	@Size( max = 255)
 	private String endereco;
 
 	@NotBlank(message = "O atributo bio é obrigatório")
