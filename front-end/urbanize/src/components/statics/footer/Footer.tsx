@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <>
             <Grid container direction="row" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", backgroundColor: "#f99e29" }}>
-                <Box paddingTop={1} paddingLeft={8} style={{ backgroundColor: "#f99e29", height: "60px" }}>
+                <Box paddingTop={1} paddingLeft={7} style={{ backgroundColor: "#f99e29", height: "60px" }}>
                     <Box>
                         <Typography variant="subtitle2" align="left" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
                     </Box>
