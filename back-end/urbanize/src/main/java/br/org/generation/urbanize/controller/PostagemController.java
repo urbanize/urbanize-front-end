@@ -36,18 +36,6 @@ public class PostagemController {
 		return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 
-	@GetMapping("/usario/{id}")
-	public ResponseEntity<List<Postagem>> getByUsuarioId(@PathVariable long id) {
-		List<Postagem> listPost = postagemRepository.findAll();
-		List<Postagem> postUser;
-		for (Postagem post : listPost) {
-			if (post.getUsuario().getId() == id){
-				postUser.add(post);
-			}
-		}
-		return ResponseEntity.ok(postUser);
-	}
-
 	@PostMapping
 	public ResponseEntity<Postagem> postPostagem(@Valid @RequestBody Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));

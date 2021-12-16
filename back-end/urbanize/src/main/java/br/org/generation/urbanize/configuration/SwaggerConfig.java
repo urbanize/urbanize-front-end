@@ -40,7 +40,7 @@ public class SwaggerConfig {
 		return new ApiInfoBuilder()
 			.title("API - Urbanize")
 			.description("Projeto API Spring - Urbanize")
-			.version("1.0.3")
+			.version("1.0.6")
 			.license("Apache License Version 2.0")
 			.licenseUrl("https://github.com/valterchess/projeto-integrador")
 			.contact(contact())
