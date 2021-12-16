@@ -14,6 +14,7 @@ function ListaPostagemUser() {
     let history = useHistory();
 
     const [posts, setPosts] = useState<Postagem[]>([])
+    const [postsTratado, setPostsTratado] = useState<Postagem[]>([])
 
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
@@ -43,7 +44,7 @@ function ListaPostagemUser() {
     }, [token])
 
     async function getPost() {
-        await busca(`/postagens/usuario/${id}`, setPosts, {
+        await busca(`/postagens`, setPosts, {
             headers: {
                 'Authorization': token
             }
@@ -58,17 +59,17 @@ function ListaPostagemUser() {
 
     var botoes: string
     
-   /* posts.map(item => {
+    posts.map(item => {
         if (item.usuario?.id == id) {
             postsTratado.push(item)
         }
-    })*/
+    })
 
 
     return (
         <>
             {
-                posts.map(post => (
+                postsTratado.map(post => (
                     <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>

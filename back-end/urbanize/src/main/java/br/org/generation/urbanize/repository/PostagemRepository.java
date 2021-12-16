@@ -9,7 +9,5 @@ import br.org.generation.urbanize.model.Postagem;
 
 @Repository
 public interface PostagemRepository extends JpaRepository<Postagem, Long> {
-	
 	public List<Postagem> findAllByTituloContainingIgnoreCase(String titulo);
-	public List<Postagem> findAllByUsuarioId(long userId);
 }

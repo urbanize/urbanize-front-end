@@ -66,17 +66,11 @@ function ListaPostagem() {
                 <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
                   {post.titulo}
                 </Typography>
-<<<<<<< HEAD
-                <Typography className="espaco-letras fonte-tema" variant="h5" component="p">
-                  {post.tema?.descricao}
-=======
-                <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
-                  {post.usuario?.nomeCompleto}
-                </Typography>
-                <Typography  className='fonte-texto' variant="body2" component="p">
-                  {post.texto}
->>>>>>> 3905cf66cca6b895f5e25a91f3f8dff48bad465d
-                </Typography>
+                <Box paddingTop={1}>
+                  <Typography className="espaco-letras fonte-tema" variant="h5" component="p">
+                    {post.tema?.tema}
+                  </Typography>
+                </Box>
                 <Box paddingTop={1}>
                   <Typography className='fonte-texto espaco-letras' component="p">
                     {post.texto}

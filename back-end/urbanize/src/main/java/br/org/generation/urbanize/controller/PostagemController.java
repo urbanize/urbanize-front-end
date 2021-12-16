@@ -39,7 +39,7 @@ public class PostagemController {
 	@GetMapping("/usario/{id}")
 	public ResponseEntity<List<Postagem>> getByUsuarioId(@PathVariable long id) {
 		List<Postagem> listPost = postagemRepository.findAll();
-		List<Postagem> postUser = new ArrayList();
+		List<Postagem> postUser;
 		for (Postagem post : listPost) {
 			if (post.getUsuario().getId() == id){
 				postUser.add(post);
