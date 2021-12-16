@@ -30,11 +30,9 @@ public class Postagem {
 	private String midia;
 
 	@NotBlank(message = "O endereço é obrigatório")
-	@Size(min = 10, max = 255)
 	private String endereco;
 
 	@NotBlank(message = "O contato é obrigatório")
-	@Size (min = 10)
 	private String contato;
 
 	@ManyToOne

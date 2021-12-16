@@ -66,14 +66,18 @@ function ListaPostagem() {
                 <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
                   {post.titulo}
                 </Typography>
-                <Typography  className='fonte-texto' variant="body2" component="p">
-                  {post.texto}
-                </Typography>
+                <Box paddingTop={1}>
+                  <Typography className="espaco-letras fonte-tema" variant="h5" component="p">
+                    {post.tema?.tema}
+                  </Typography>
+                </Box>
+                <Box paddingTop={1}>
+                  <Typography className='fonte-texto espaco-letras' component="p">
+                    {post.texto}
+                  </Typography>
+                </Box>
                 <Typography variant="body2" component="p">
                   {post.endereco}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {post.tema?.descricao}
                 </Typography>
               </CardContent>
               <CardActions>

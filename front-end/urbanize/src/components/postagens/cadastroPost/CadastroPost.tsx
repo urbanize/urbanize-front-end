@@ -66,7 +66,7 @@ function CadastroPost() {
         midia: '',
         endereco: '',
         tema: null,
-        usuario: null
+        usuario: user
     })
 
     useEffect(() => {
@@ -113,7 +113,7 @@ function CadastroPost() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        console.log(JSON.stringify(postagem))
+
         if (id !== undefined) {
             put(`/postagens`, postagem, setPostagem, {
                 headers: {
@@ -153,6 +153,8 @@ function CadastroPost() {
 
     function back() {
         history.push('/posts')
+
+
     }
 
     return (

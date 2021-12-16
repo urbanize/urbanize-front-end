@@ -30,6 +30,15 @@
 
 .fonte-texto{
     font-family: Helvetica;
+    font-size: 15px!important;
+  }
+
+.fonte-tema {
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif!important;
+    color: #505050;
 }
 
-
+.espaco-letras{
+    letter-spacing: 1px!important;
+}
