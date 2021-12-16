@@ -55,9 +55,8 @@ function App() {
               <ListaTema />
             </Route>
             <Route path='/posts'>
-              <ListaPostagemUser />
+              <ListaPostagem />
             </Route>
-
             <Route exact path='/formularioPostagem'>
               <CadastroPost />
             </Route>
@@ -76,7 +75,9 @@ function App() {
             <Route path='/deletarTema/:id'>
               <DeletarTema />
             </Route>
-
+            <Route path='/postsuser'>
+              <ListaPostagemUser />
+            </Route>
 
           </div>
         </Switch>

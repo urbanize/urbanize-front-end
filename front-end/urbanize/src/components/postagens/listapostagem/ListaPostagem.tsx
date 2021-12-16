@@ -70,6 +70,9 @@ function ListaPostagem() {
                   {post.texto}
                 </Typography>
                 <Typography variant="body2" component="p">
+                  {post.endereco}
+                </Typography>
+                <Typography variant="body2" component="p">
                   {post.tema?.descricao}
                 </Typography>
               </CardContent>

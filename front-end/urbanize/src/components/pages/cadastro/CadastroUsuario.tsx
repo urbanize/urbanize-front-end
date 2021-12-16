@@ -31,8 +31,8 @@ function CadastroUsuario() {
             foto: '',
             tipo: '',
             senha: '',
-            bio:'',
-            endereco:''
+            bio: '',
+            endereco: ''
         }
     )
 
@@ -73,29 +73,29 @@ function CadastroUsuario() {
                 </Box>
             </Grid>
             <Grid item xs={6} alignItems='center'>
-                <Box paddingX={18}>
+                <Box paddingX={18} alignItems='center'>
                     <form onSubmit={onSubmit}>
                         <Typography variant='h2' gutterBottom color='textPrimary' component='h2' align='center' className='textos2'>Cadastrar</Typography>
-                        <TextField value={user.nomeCompleto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nomeCompleto' label='nomeCompleto' variant='outlined' name='nomeCompleto' margin='normal' fullWidth />
+                        <TextField value={user.nomeCompleto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nomeCompleto' label='nome' variant='outlined' name='nomeCompleto' margin='normal' fullWidth />
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
+                        <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='um pouco sobre você' variant='outlined' name='bio' margin='normal' fullWidth />
+                        <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereco' label='bairro' variant='outlined' name='endereco' margin='normal' fullWidth />*/
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
-                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
+                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmar senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/home' className='text-decorator-none'>
-                                <Button variant='contained' className='botao2 btnCancelar'>
-                                    Cadastrar
+                                <Button variant='contained' className='btnCancelar'>
+                                    Cancelar
                                 </Button>
                             </Link>
-
-                            <Button type='submit' variant='contained' className='btnCancelar'>
-                                Cancelar
+                            <Button type='submit' variant='contained' className='botao2'>
+                                Cadastrar
                             </Button>
-
                         </Box>
                     </form>
                 </Box>
-            </Grid>
-        </Grid>
+            </Grid >
+        </Grid >
     );
 }
 

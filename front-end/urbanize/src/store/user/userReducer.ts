@@ -18,8 +18,6 @@ const initialState = {
     ids: 0,
     enderecos: "",
     bios: "",
-    
-    
 }
 
 export const userReducer = (state: UserState = initialState, action: Action) =>{

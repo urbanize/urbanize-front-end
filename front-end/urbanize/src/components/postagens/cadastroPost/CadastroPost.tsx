@@ -113,7 +113,7 @@ function CadastroPost() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-
+            console.log(JSON.stringify(postagem))
         if (id !== undefined) {
             put(`/postagens`, postagem, setPostagem, {
                 headers: {
@@ -152,7 +152,7 @@ function CadastroPost() {
     }
 
     function back() {
-        history.push('/postsuser')
+        history.push('/homelogin')
     }
 
     return (
@@ -162,6 +162,7 @@ function CadastroPost() {
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
                 <TextField value={postagem.contato} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="contato" label="contato" name="contato" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="endereco" label="endereço" name="endereco" variant="outlined" margin="normal" fullWidth />
                 <TextField value={postagem.midia} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="midia" label="midia" name="midia" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >

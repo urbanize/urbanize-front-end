@@ -77,33 +77,33 @@ function HomeLogin() {
                         <Box className='box cardEstilo' paddingLeft={7} m={2}>
                             <Card variant="outlined">
                                 <CardContent className='box' >
-                                    <img src={fotoPerfil}  className='foto-perfil' />
-                                    <Typography  className='fonte-titulos-nome' variant="h5" component="h2" align='center' style={{marginTop: 10}}>
+                                    <img src={fotoPerfil} className='foto-perfil' />
+                                    <Typography className='fonte-titulos-nome' variant="h5" component="h2" align='center' style={{ marginTop: 10 }}>
                                         {nomeUsuario}
                                     </Typography>
-                                    <Typography  className='fonte-titulos-nome' component="h6" align='center'>
+                                    <Typography className='fonte-titulos-nome' component="h6" align='center'>
                                         {enderecoUsuario}
                                     </Typography>
-                                    <Typography  className='fonte-titulos-nome' component="h6" align='center'>
+                                    <Typography className='fonte-titulos-nome' component="h6" align='center'>
                                         {bioUsuario}
                                     </Typography>
-                                    
+
                                 </CardContent>
                             </Card>
                             <Box className='cardEstilo outrabox'>
                                 <Box className='alinhar-itens' m={2} >
                                     <Box className='alinhar-itens'>
-                                <ModalPostagem />
-                                <Button type='submit' variant='outlined' className='btnPadding'>
-                                    MINHAS POSTAGENS 
-                                </Button>
+                                        <ModalPostagem />
+                                        <Link to="/postsuser" className="text-decorator-none">
+                                            <Button type='submit' variant='outlined' className='btnPadding'>
+                                                MINHAS POSTAGENS
+                                            </Button>
+                                        </Link>
+                                    </Box>
                                 </Box>
-                                </Box>
-                        </Box>
+                            </Box>
                         </Box>
                     </Grid>
-
-
                     <Grid alignItems="center" item xs={8} >
                         <Box className='box' paddingRight={7}>
                             <ListaPostagem />

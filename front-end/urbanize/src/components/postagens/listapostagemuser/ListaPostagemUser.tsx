@@ -4,6 +4,8 @@ import Postagem from '../../pages/models/Postagem';
 import { busca } from '../../pages/services/Service';
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import { useHistory } from 'react-router-dom'
+import './ListaPostagemUser.css';
+import PostEmpty from './PostEmpty';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { UserState } from '../../../store/user/userReducer';
@@ -58,15 +60,11 @@ function ListaPostagemUser() {
         botoes = "bottom-none"
     }
 
-
-
     return (
-
         <>
             {
                 posts.forEach(post => {
-                    if (post.usuario?.id == id){
-
+                    if (post.usuario?.id === id){
                         <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>
@@ -103,11 +101,12 @@ function ListaPostagemUser() {
                             </CardActions>
                         </Card>
                     </Box>
+                    } else {
+                        <PostEmpty/>
                     }
                 })
             }
         </>
-
     );
 }
 
