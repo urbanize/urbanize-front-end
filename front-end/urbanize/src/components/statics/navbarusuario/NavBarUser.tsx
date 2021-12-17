@@ -40,9 +40,9 @@ function NavBarUser() {
     var cadastrarTema;
     if (tipo == 'admin') {
         cadastrarTema = <Link to="/formularioTema" className="text-decorator-none">
-            <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                    cadastrar tema
+            <Box mx={1} fontWeight= "bold" className='cursor'>
+                <Typography color="inherit">
+                    CADASTRAR TEMA
                 </Typography>
             </Box>
         </Link>
@@ -61,23 +61,23 @@ function NavBarUser() {
                 <Box display="flex" justifyContent="start">
                     <Link to="/posts" className="text-decorator-none">
                         <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Postagens
+                            <Typography  color="inherit">
+                                POSTAGENS
                             </Typography>
                         </Box>
                     </Link>
                     <Link to="/temas" className="text-decorator-none">
                         <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Temas
+                            <Typography color="inherit">
+                                TEMAS
                             </Typography>
                         </Box>
                     </Link>
 
                     {cadastrarTema}
                     <Box mx={1} className='cursor' onClick={goLogout}>
-                        <Typography variant="h6" color="inherit">
-                            Logout
+                        <Typography  color="inherit">
+                            LOGOUT
                         </Typography>
                     </Box>
 

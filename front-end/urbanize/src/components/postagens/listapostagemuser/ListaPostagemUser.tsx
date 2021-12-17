@@ -68,14 +68,14 @@ function ListaPostagemUser() {
                     <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>
-                                <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
+                                <Typography variant="h5" component="h5" gutterBottom className='fonte-titulos'>
                                     Título: {post.titulo}
                                 </Typography>
-                                <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
+                                <Typography variant="h6" component="h6" gutterBottom className='fonte-titulos'>
                                     Responsável: {post.usuario?.nomeCompleto}
                                 </Typography>
                                 <Typography className='fonte-texto' variant="body2" component="p">
-                                    descrição do projeto: {post.texto}
+                                    Descrição do Projeto: {post.texto}
                                 </Typography>
                                 <Typography variant="body2" component="p">
                                     Local do Projeto: {post.endereco}
@@ -83,20 +83,21 @@ function ListaPostagemUser() {
                                 <Typography variant="body2" component="p">
                                     Tema: {post.tema?.descricao}
                                 </Typography>
+                                <img src={post.midia} className='foto-post' />
                             </CardContent>
                             <CardActions>
                                 <Box display="flex" justifyContent="center" className={botoes} mb={1.5}>
                                     <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                                         <Box mx={1}>
                                             <Button variant='contained' className='botao2' >
-                                                atualizar
+                                                ATUALIZAR
                                             </Button>
                                         </Box>
                                     </Link>
                                     <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                                         <Box mx={1}>
                                             <Button type='submit' variant='outlined' className='btnCancelar'>
-                                                deletar
+                                                DELETAR
                                             </Button>
                                         </Box>
                                     </Link>

@@ -42,3 +42,20 @@
 .espaco-letras{
     letter-spacing: 1px!important;
 }
+
+.foto-post{
+
+    height: 300px;
+}
+
+.fonte-endereco{
+    font-size: 12px!important;
+    font-family: Helvetica;
+    color: #505050;
+  }
+
+  .fonte-contato{
+    font-size: 15px!important;
+    font-family: Helvetica;
+    color: #505050;
+  }

@@ -62,13 +62,13 @@ function ListaTema() {
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Tema
+                                    TEMA
                                 </Typography>
-                                <Typography variant="h5" component="h2">
+                                <Typography variant="h5" component="h5">
                                     {tema.descricao}
                                 </Typography>
-                                <Typography variant="h5" component="h2">
-                                    {tema.palavraChave}
+                                <Typography variant="h6" component="h6">
+                                  Palavra-Chave:  {tema.palavraChave}
                                 </Typography>
                             </CardContent>
                             <CardActions>
@@ -76,14 +76,14 @@ function ListaTema() {
                                     <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                                         <Box mx={1}>
                                             <Button variant="contained" className="marginLeft btn-atualizar-tema" size='small'>
-                                                atualizar
+                                                ATUALIZAR
                                             </Button>
                                         </Box>
                                     </Link>
                                     <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                                         <Box mx={1}>
                                             <Button className='btn-deletar-tema' variant="contained" size='small'>
-                                                deletar
+                                                DELETAR
                                             </Button>
                                         </Box>
                                     </Link>
