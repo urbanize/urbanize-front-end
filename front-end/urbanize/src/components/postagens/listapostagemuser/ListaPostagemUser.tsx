@@ -13,13 +13,9 @@ function ListaPostagemUser() {
     let history = useHistory();
 
     const [posts, setPosts] = useState<Postagem[]>([])
-    const [postsTratado, setPostsTratado] = useState<Postagem[]>([])
 
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
-    );
-    const tipo = useSelector<UserState, UserState["tipos"]>(
-        (state) => state.tipos
     );
     const id = useSelector<UserState, UserState["ids"]>(
         (state) => state.ids
@@ -57,35 +53,35 @@ function ListaPostagemUser() {
     }, [posts.length])
 
     var botoes: string
-    
-    posts.map(item => {
-        if (item.usuario?.id == id) {
-            postsTratado.push(item)
+    const arrPost = posts.filter(function (ele, pos) {
+        if (ele.usuario?.id === id) {
+            return posts.indexOf(ele) === pos;
         }
     })
 
+    arrPost.reverse();
 
     return (
         <>
             {
-                postsTratado.map(post => (
+                arrPost.map(post => (
                     <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
-                                    {post.titulo}
+                                    Título: {post.titulo}
                                 </Typography>
                                 <Typography variant="h4" component="h4" gutterBottom className='fonte-titulos'>
-                                    {post.usuario?.nomeCompleto}
+                                    Responsável: {post.usuario?.nomeCompleto}
                                 </Typography>
                                 <Typography className='fonte-texto' variant="body2" component="p">
-                                    {post.texto}
+                                    descrição do projeto: {post.texto}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {post.endereco}
+                                    Local do Projeto: {post.endereco}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {post.tema?.descricao}
+                                    Tema: {post.tema?.descricao}
                                 </Typography>
                             </CardContent>
                             <CardActions>

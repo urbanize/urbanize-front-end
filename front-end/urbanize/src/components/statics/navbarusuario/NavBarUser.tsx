@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom'
-import { useSelector } from 'react-redux';
-import { useDispatch } from "react-redux";
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { AppBar, Box, Button, Toolbar, Typography } from '@material-ui/core';
 import { UserState } from '../../../store/user/userReducer';

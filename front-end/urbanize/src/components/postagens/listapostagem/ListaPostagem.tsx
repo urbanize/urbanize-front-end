@@ -56,10 +56,17 @@ function ListaPostagem() {
     botoes = "bottom-none"
   }
 
+  const arrPost = posts.filter(function(ele , pos){
+    return posts.indexOf(ele) === pos;
+}) 
+
+arrPost.reverse();
+
+
   return (
     <>
       {
-        posts.map(post => (
+        arrPost.map(post => (
           <Box m={2} >
             <Card variant="outlined">
               <CardContent>
