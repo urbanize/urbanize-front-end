@@ -1,6 +1,6 @@
 .box-texto{
     padding-top: 85px;
-    color: #807c7c!important;
+    color: #505050!important;
     font-weight: bold !important;
     font-family: 'Source Sans Pro', sans-serif!important;
     
@@ -10,19 +10,20 @@
     height: 400px !important;
     width: 400px !important;
 }
-
-.alinhar-img{
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
 .icone{
     color: #f99e29!important;
     font-size: 700 !important;
 }
 
-.center {
-    justify-items: center;
+.box-icones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+.espaco-letras{
+    letter-spacing: 1px!important;
+}
+
 
