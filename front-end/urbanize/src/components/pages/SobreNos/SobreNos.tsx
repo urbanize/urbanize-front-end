@@ -2,6 +2,8 @@ import React, { } from 'react'
 import { Typography, Box, Grid, } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './SobreNos.css';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 
 function SobreNos() {
@@ -11,8 +13,8 @@ function SobreNos() {
                 <Grid xs={12}  >
                     <Grid container justifyContent="center">
                         <Grid item xs={6}>
-                            <Box paddingTop={10} >
-                                <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{ width: "100vh", height: "20vh" }} />
+                            <Box >
+                                <img src="https://i.imgur.com/iBcWVny.png" alt="logo urbanize" style={{ width: "100vh", height: "100vh" }} />
                             </Box>
                         </Grid>
                     </Grid>
@@ -66,13 +68,84 @@ function SobreNos() {
                         </Grid>
                     </Grid>
                 </Grid>
+                <Grid container justifyContent="center">
+                    <Grid item xs={6} >
+                        <Box >
+                            <Typography variant='h3' component='h3' align='center' className='box-texto'>
+                                Quem faz a Urbanize?
+                            </Typography>
+                        </Box>
+                    </Grid>
+                </Grid>
+
+                <Grid container xs={12} justifyContent='center' alignItems='center' >
 
 
-                <Grid xs={12}>
+                    <Grid item xs={4}>
+                        <Box justifyContent="center" alignItems="center" >
+                            <img className='box-fotos center' src="https://i.imgur.com/sYaKCkV.png" alt="Dev Andreia" />
 
-                    <Box className='box-fotos'>
+                        </Box>
+                        <Box paddingRight={8} display="flex" alignItems="center" justifyContent="center">
+                        
+                            <a href=" https://github.com/AndreiaJM" target="_blank">
+                                <GitHubIcon style={{ fontSize: 50, color: "#f99e29" }} />
+                            </a>
+                            <a href=" https://www.linkedin.com/in/andreiajeniffer/" target="_blank">
+                                <LinkedInIcon style={{ fontSize: 60, color: "#f99e29" }} />
+                            </a>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <img className='box-fotos' src="https://i.imgur.com/pu8PzOP.png" alt="Dev Carlos" />
+                        <Box paddingRight={8} display="flex" alignItems="center" justifyContent="center">
 
-                    </Box>
+                            <a href="https://github.com/botelhocarlos" target="_blank">
+                                <GitHubIcon style={{ fontSize: 50, color: "#f99e29" }} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/carlos-henrique-botelho/" target="_blank">
+                                <LinkedInIcon style={{ fontSize: 60, color: "#f99e29" }} />
+                            </a>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <img className='box-fotos' src="https://i.imgur.com/dAOvWUg.png" alt="Dev Renan" />
+                        <Box paddingRight={8} display="flex" alignItems="center" justifyContent="center">
+
+                            <a href=" https://github.com/RenanMoreira92" target="_blank">
+                                <GitHubIcon style={{ fontSize: 50, color: "#f99e29" }} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/renan-moreira-518aa6188/" target="_blank">
+                                <LinkedInIcon style={{ fontSize: 60, color: "#f99e29" }} />
+                            </a>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <img className='box-fotos' src="https://i.imgur.com/eqEohka.png" alt="Dev Thaís" />
+                        <Box paddingRight={8} display="flex" alignItems="center" justifyContent="center">
+
+                            <a href=" https://github.com/tholivera" target="_blank">
+                                <GitHubIcon style={{ fontSize: 50, color: "#f99e29" }} />
+                            </a>
+                            <a href=" https://www.linkedin.com/in/thais-oliveira-2341a0147/" target="_blank">
+                                <LinkedInIcon style={{ fontSize: 60, color: "#f99e29" }} />
+                            </a>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <img className='box-fotos' src="https://i.imgur.com/E6FvVWJ.png" alt="Dev Valter" />
+                        <Box paddingRight={8} display="flex" alignItems="center" justifyContent="center">
+
+                            <a href="https://github.com/valterchess" target="_blank">
+                                <GitHubIcon style={{ fontSize: 50, color: "#f99e29" }} />
+                            </a>
+                            <a href=" https://www.linkedin.com/in/valter-silva-5a44b1171/" target="_blank">
+                                <LinkedInIcon style={{ fontSize: 60, color: "#f99e29" }} />
+                            </a>
+                        </Box>
+                    </Grid>
+
+
                 </Grid>
             </Grid>
         </>
