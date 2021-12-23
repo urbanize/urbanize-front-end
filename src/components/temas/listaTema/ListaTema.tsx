@@ -56,43 +56,45 @@ function ListaTema() {
 
     return (
         <>
-            {
-                temas.map(tema => (
-                    <Box m={2} >
-                        <Card variant="outlined">
-                            <CardContent>
-                                <Typography color="textSecondary" gutterBottom>
-                                    TEMA
-                                </Typography>
-                                <Typography variant="h5" component="h5">
-                                    {tema.descricao}
-                                </Typography>
-                                <Typography variant="h6" component="h6">
-                                  Palavra-Chave:  {tema.palavraChave}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5} className={botoes}>
-                                    <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
-                                        <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft btn-atualizar-tema" size='small'>
-                                                ATUALIZAR
-                                            </Button>
-                                        </Box>
-                                    </Link>
-                                    <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
-                                        <Box mx={1}>
-                                            <Button className='btn-deletar-tema' variant="contained" size='small'>
-                                                DELETAR
-                                            </Button>
-                                        </Box>
-                                    </Link>
-                                </Box>
-                            </CardActions>
-                        </Card>
-                    </Box>
-                ))
-            }
+            <Box paddingTop={7}  paddingLeft={6} paddingRight={6}>
+                {
+                    temas.map(tema => (
+                        <Box m={2} >
+                            <Card >
+                                <CardContent>
+                                    <Typography color="textSecondary" gutterBottom>
+                                        TEMA
+                                    </Typography>
+                                    <Typography variant="h5" component="h5">
+                                        {tema.descricao}
+                                    </Typography>
+                                    <Typography variant="h6" component="h6">
+                                        Palavra-Chave:  {tema.palavraChave}
+                                    </Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <Box display="flex" justifyContent="center" mb={1.5} className={botoes}>
+                                        <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
+                                            <Box mx={1}>
+                                                <Button variant="contained" className="marginLeft btn-atualizar-tema" size='small'>
+                                                    ATUALIZAR
+                                                </Button>
+                                            </Box>
+                                        </Link>
+                                        <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
+                                            <Box mx={1}>
+                                                <Button className='btn-deletar-tema' variant="contained" size='small'>
+                                                    DELETAR
+                                                </Button>
+                                            </Box>
+                                        </Link>
+                                    </Box>
+                                </CardActions>
+                            </Card>
+                        </Box>
+                    ))
+                }
+            </Box>
         </>
     );
 }

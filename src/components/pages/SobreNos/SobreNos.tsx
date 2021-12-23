@@ -13,8 +13,8 @@ function SobreNos() {
                 <Grid xs={12}  >
                     <Grid container justifyContent="center">
                         <Grid item xs={6}>
-                            <Box >
-                                <img src="https://i.imgur.com/iBcWVny.png" alt="logo urbanize" style={{ width: "100vh", height: "100vh" }} />
+                            <Box paddingTop={10}>
+                                <img src="https://i.imgur.com/DhKsfz2.png?1" alt="logo urbanize" style={{ width: "100vh", height: "56vh" }} />
                             </Box>
                         </Grid>
                     </Grid>
@@ -22,12 +22,12 @@ function SobreNos() {
                     <Grid container direction="row" justifyContent="center" alignItems="center">
                         <Grid item xs={6}>
                             <Box className='box-texto' paddingRight={7} paddingLeft={7}>
-                                <Box paddingBottom={2}>
+                                <Box >
                                 <Typography variant='h3' component='h3' align='center'>
                                     O que é?
                                 </Typography>
                                 </Box>
-                                <Box paddingBottom={2} >
+                                <Box paddingTop={2}>
                                 <Typography className='espaco-letras'>
                                     Baseada na ODS 11 – Cidades e Comunidades Sustentáveis da ONU,
                                     Criamos uma rede social com o objetivo de conectar pessoas através de um objetivo comum: dar vida e ocupar espaços públicos urbanos.
@@ -37,24 +37,26 @@ function SobreNos() {
                         </Grid>
                         <Grid item xs={6}>
                             <Box className='box-texto' paddingLeft={7} paddingRight={7}>
-                                <Box paddingBottom={2}>
+                                <Box >
                                 <Typography variant='h3' component='h3' align='center'>
                                     Como?
                                 </Typography>
                                 </Box>
+                                <Box paddingTop={2}>
                                 <Typography className='espaco-letras'>
                                     Por meio da divulgação de iniciativas individuais e de coletivos, nossa API irá conectar pessoas e/ou empresas que buscam atuar de forma ativa na promoção de revitalização e ações de resgate da qualidade de vida em parques e praças.
                                 </Typography>
+                                </Box>
                             </Box>
                         </Grid>
                         <Grid item xs={6}>
                             <Box className='box-texto' paddingRight={7} paddingLeft={7}>
-                                <Box paddingBottom={2}>
+                                <Box >
                                 <Typography variant='h3' component='h3' align='center'>
-                                    Para Quem?
+                                    Para quem?
                                 </Typography>
                                 </Box>
-                                <Box paddingBottom={14} >
+                                <Box paddingBottom={12} paddingTop={2}>
                                 <Typography className='espaco-letras'>
                                     A Promoção de espaços públicos seguros e acessíveis é para todes, principalmente para crianças, mulheres, idosos e pessoas com deficiência.
                                 </Typography>
@@ -63,11 +65,12 @@ function SobreNos() {
                         </Grid>
                         <Grid item xs={6}>
                             <Box className='box-texto' paddingLeft={7} paddingRight={7}>
-                                <Box paddingBottom={2} >
+                                <Box >
                                 <Typography variant='h3' component='h3' align='center'>
                                     Objetivos
                                 </Typography>
                                 </Box>
+                                <Box paddingTop={2}>
                                 <Typography className='espaco-letras'>
                                     Estímulo à participação ativa da sociedade civil em políticas públicas;
                                     Identificação de agentes locais com maior facilidade na identificação de demandas e resolução de conflitos;
@@ -76,6 +79,7 @@ function SobreNos() {
                                     Descentralização do poder público;
                                     Formalização de parcerias resulta em espaços públicos mais qualificados e melhora imagem do setor privado frente à sociedade.
                                 </Typography>
+                                </Box>
                             </Box>
                         </Grid>
                     </Grid>
@@ -83,7 +87,7 @@ function SobreNos() {
                 <Grid container justifyContent="center">
                     <Grid item xs={6} >
                         <Box paddingBottom={7} >
-                            <Typography variant='h2' component='h2' align='center' className='box-texto'>
+                            <Typography variant='h3' component='h3' align='center' className='box-texto'>
                                 Quem faz a Urbanize?
                             </Typography>
                         </Box>
@@ -99,10 +103,10 @@ function SobreNos() {
                                 <Typography variant='h5' component='h5' align='center'>
                                     Andreia Menezes
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Desenvolvedora Full Stack 
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Estudante de Biomedicina
                                 </Typography>
                             </Box>
@@ -125,10 +129,10 @@ function SobreNos() {
                                 <Typography variant='h5' component='h5' align='center'>
                                     Carlos Botelho
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Desenvolvedor Full Stack 
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Arquiteto Urbanista
                                 </Typography>
                             </Box>
@@ -150,12 +154,12 @@ function SobreNos() {
 
                         <Box >
                                 <Typography variant='h5' component='h5' align='center'>
-                                    Renan
+                                    Renan Moreira
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Desenvolvedor Full Stack 
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Educador Fisico
                                 </Typography>
                             </Box>
@@ -180,10 +184,10 @@ function SobreNos() {
                                 <Typography variant='h5' component='h5' align='center'>
                                     Thaís Oliveira
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Desenvolvedora Full Stack 
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Engenheira de Produção
                                 </Typography>
                             </Box>
@@ -207,10 +211,10 @@ function SobreNos() {
                                 <Typography variant='h5' component='h5' align='center'>
                                     Valter Silva
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                     Desenvolvedor Full Stack 
                                 </Typography>
-                                <Typography variant='h6' component='h6' align='center'>
+                                <Typography align='center'>
                                 Operador de Rastreamento
                                 </Typography>
                             </Box>

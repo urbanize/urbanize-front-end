@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { AppBar, Box, Button, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Avatar, Box, Button, Toolbar, Typography } from '@material-ui/core';
 import { UserState } from '../../../store/user/userReducer';
 import { addName, addTipo, addToken } from '../../../store/user/actions';
 import './NavBarUser.css';
@@ -16,6 +16,9 @@ function NavBarUser() {
     );
     const tipo = useSelector<UserState, UserState["tipos"]>(
         (state) => state.tipos
+    );
+    const foto = useSelector<UserState, UserState["fotos"]>(
+        (state) => state.fotos
     );
     let history = useHistory();
     const dispatch = useDispatch();
@@ -40,7 +43,7 @@ function NavBarUser() {
     var cadastrarTema;
     if (tipo == 'admin') {
         cadastrarTema = <Link to="/formularioTema" className="text-decorator-none">
-            <Box mx={1} fontWeight= "bold" className='cursor'>
+            <Box mx={1} paddingTop={1} fontWeight="bold" className='cursor'>
                 <Typography color="inherit">
                     CADASTRAR TEMA
                 </Typography>
@@ -48,40 +51,47 @@ function NavBarUser() {
         </Link>
     }
     if (token != "") {
-        navbarComponent = <AppBar position="static" style={{ backgroundColor: "#f99e29" }}>
-            <Toolbar variant="dense">
-                <Box className='cursor'>
-                    <Link to='/homelogin'>
-                        <Box paddingLeft={5}>
-                            <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{ width: "25vh", height: "5vh" }} />
-                        </Box>
-                    </Link>
-                </Box>
-
-                <Box display="flex" justifyContent="start">
-                    <Link to="/posts" className="text-decorator-none">
-                        <Box mx={1} className='cursor'>
-                            <Typography  color="inherit">
-                                POSTAGENS
-                            </Typography>
-                        </Box>
-                    </Link>
-                    <Link to="/temas" className="text-decorator-none">
-                        <Box mx={1} className='cursor'>
-                            <Typography color="inherit">
-                                TEMAS
-                            </Typography>
-                        </Box>
-                    </Link>
-
-                    {cadastrarTema}
-                    <Box mx={1} className='cursor' onClick={goLogout}>
-                        <Typography  color="inherit">
-                            LOGOUT
-                        </Typography>
+        navbarComponent = <AppBar variant="elevation" style={{ backgroundColor: "#f99e29" }}>
+            <Toolbar variant="dense" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between"}}>
+                <Box display='flex'>
+                    <Box className='cursor'>
+                        <Link to='/homelogin'>
+                            <Box paddingLeft={5}>
+                                <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{ width: "25vh", height: "5vh" }} />
+                            </Box>
+                        </Link>
                     </Box>
+                    <Box display="flex" justifyContent="start">
+                        <Link to="/posts" className="text-decorator-none">
+                            <Box mx={1} paddingTop={1} className='cursor'>
+                                <Typography color="inherit">
+                                    POSTAGENS
+                                </Typography>
+                            </Box>
+                        </Link>
+                        <Link to="/temas" className="text-decorator-none">
+                            <Box mx={1} paddingTop={1}  className='cursor'>
+                                <Typography color="inherit">
+                                    TEMAS
+                                </Typography>
+                            </Box>
+                        </Link>
 
+                        {cadastrarTema}
+                    </Box>
                 </Box>
+                <Box display='flex' paddingRight={5}>
+                    <Box mx={1} paddingTop={1}  className='cursor' onClick={goLogout}>
+                        <Typography color="inherit">
+                            SAIR
+                        </Typography>
+                        
+                    </Box>
+                    <Link to='/homelogin'>
+                    <Avatar alt="Foto de peril" src={foto} className='avatar'/>
+                    </Link>
+                </Box>
+
             </Toolbar>
         </AppBar>
     }
@@ -91,7 +101,7 @@ function NavBarUser() {
                 <Link to='/home' className='text-decorator-none'>
                     <Box paddingLeft={4}>
                         <Box>
-                        <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{ width: "25vh", height: "5vh" }} />
+                            <img src="https://i.imgur.com/mqC0VS2.png" alt="logo urbanize" style={{ width: "25vh", height: "5vh" }} />
                         </Box>
                     </Box>
                 </Link>

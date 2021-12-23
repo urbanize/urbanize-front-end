@@ -31,6 +31,7 @@
 .fonte-texto{
     font-family: Helvetica;
     font-size: 15px!important;
+    word-break: break-word;
 }
 
 .fonte-tema {
@@ -44,7 +45,7 @@
 }
 
 .foto-post{
-
+    width: 500px;
     height: 300px;
 }
 
