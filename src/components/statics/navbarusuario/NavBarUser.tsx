@@ -44,7 +44,7 @@ function NavBarUser() {
     if (tipo == 'admin') {
         cadastrarTema = <Link to="/formularioTema" className="text-decorator-none">
             <Box mx={1} paddingTop={1} fontWeight="bold" className='cursor'>
-                <Typography color="inherit">
+                <Typography>
                     CADASTRAR TEMA
                 </Typography>
             </Box>
@@ -64,31 +64,30 @@ function NavBarUser() {
                     <Box display="flex" justifyContent="start">
                         <Link to="/posts" className="text-decorator-none">
                             <Box mx={1} paddingTop={1} className='cursor'>
-                                <Typography color="inherit">
+                                <Typography>
                                     POSTAGENS
                                 </Typography>
                             </Box>
                         </Link>
                         <Link to="/temas" className="text-decorator-none">
                             <Box mx={1} paddingTop={1}  className='cursor'>
-                                <Typography color="inherit">
+                                <Typography>
                                     TEMAS
                                 </Typography>
                             </Box>
                         </Link>
-
                         {cadastrarTema}
                     </Box>
                 </Box>
                 <Box display='flex' paddingRight={5}>
                     <Box mx={1} paddingTop={1}  className='cursor' onClick={goLogout}>
-                        <Typography color="inherit">
+                        <Typography>
                             SAIR
                         </Typography>
                         
                     </Box>
                     <Link to='/homelogin'>
-                    <Avatar alt="Foto de peril" src={foto} className='avatar'/>
+                    <Avatar alt="Foto de perfil" src={foto} className='avatar'/>
                     </Link>
                 </Box>
 
@@ -107,10 +106,10 @@ function NavBarUser() {
                 </Link>
                 <Box paddingRight={5}>
                     <Link to='/login' className='text-decorator-none'>
-                        <Button color="inherit" style={{ fontWeight: "bold" }}>Entrar</Button>
+                        <Button style={{ color: 'white', fontWeight: "bold" }}>Entrar</Button>
                     </Link>
-                    <Link to='/cadastrar' className='text-decorator-none2'>
-                        <Button color="inherit" style={{ fontWeight: "bold" }} className='bot4'>Cadastre-se</Button>
+                    <Link to='/cadastrar' className='text-decorator-none'>
+                        <Button style={{ fontWeight: "bold" }} className='btn-cadastre-se'>Cadastre-se</Button>
                     </Link>
                 </Box>
             </Toolbar>

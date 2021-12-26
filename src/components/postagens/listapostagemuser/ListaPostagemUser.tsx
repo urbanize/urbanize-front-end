@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Postagem from '../../pages/models/Postagem';
 import { busca } from '../../pages/services/Service';
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Box, Card, CardActions, CardContent, Button, Typography, Container } from '@material-ui/core';
 import { useHistory } from 'react-router-dom'
 import './ListaPostagemUser.css';
 import { useSelector } from 'react-redux';
@@ -63,56 +63,60 @@ function ListaPostagemUser() {
 
     return (
         <>
-            <Box paddingTop={7}  paddingLeft={6} paddingRight={6}>
-
-
-                {
-                    arrPost.map(post => (
-                        <Box m={2}  >
-                            <Card >
-                                <CardContent>
-                                    <Typography variant="h5" component="h5" gutterBottom className='fonte-titulos'>
-                                        Título: {post.titulo}
-                                    </Typography>
-                                    <Typography variant="h6" component="h6" gutterBottom className='fonte-titulos'>
-                                        Responsável: {post.usuario?.nomeCompleto}
-                                    </Typography>
-                                    <Typography className='fonte-texto' variant="body2" component="p">
-                                        Descrição do Projeto: {post.texto}
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        Local do Projeto: {post.endereco}
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        Tema: {post.tema?.descricao}
-                                    </Typography>
-                                    <Box paddingTop={1}>
-                                        <img src={post.midia} className='foto-post' />
-                                    </Box>
-                                </CardContent>
-                                <CardActions>
-                                    <Box display="flex" justifyContent="center" className={botoes} mb={1.5}>
-                                        <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
-                                            <Box mx={1}>
-                                                <Button variant='contained' className='botao2' >
-                                                    ATUALIZAR
-                                                </Button>
+            <Container maxWidth="md">
+                <Box paddingTop={7} paddingLeft={6} paddingRight={6}>
+                    {
+                        arrPost.map(post => (
+                            <Box m={2}  >
+                                <Card >
+                                    <Box display="flex" justifyContent="center" >
+                                        <CardContent>
+                                            <Typography variant="h5" component="h5" className='fonte-titulos'>
+                                                Título: {post.titulo}
+                                            </Typography>
+                                            <Typography className='espaco-letras fonte-tema1' component="p">
+                                                Tema: {post.tema?.descricao}
+                                            </Typography>
+                                            <Typography className='espaco-letras fonte-texto' variant="body2" component="p">
+                                                Descrição do Projeto: {post.texto}
+                                            </Typography>
+                                            <Box paddingTop={1}>
+                                                <img src={post.midia} className='foto-post' />
                                             </Box>
-                                        </Link>
-                                        <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
-                                            <Box mx={1}>
-                                                <Button type='submit' variant='outlined' className='btnCancelar'>
-                                                    DELETAR
-                                                </Button>
-                                            </Box>
-                                        </Link>
+                                            <Typography className='espaco-letras fonte-endereco'>
+                                                Local do Projeto: {post.endereco}
+                                            </Typography>
+                                            <Typography variant="h6" component="h6" className='espaco-letras fonte-titulos'>
+                                                Responsável: {post.usuario?.nomeCompleto}
+                                            </Typography>
+                                        </CardContent>
                                     </Box>
-                                </CardActions>
-                            </Card>
-                        </Box>
-                    ))
-                }
-            </Box>
+                                    <Box display="flex" justifyContent="center" className={botoes} >
+                                        <CardActions>
+                                            <Box display="flex" justifyContent="center" mb={1.5}>
+                                                <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
+                                                    <Box mx={1}>
+                                                        <Button variant='contained' className='btn-atualizar-post' >
+                                                            ATUALIZAR
+                                                        </Button>
+                                                    </Box>
+                                                </Link>
+                                                <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                                                    <Box mx={1}>
+                                                        <Button type='submit' variant='contained' className='btn-deletar-post'>
+                                                            DELETAR
+                                                        </Button>
+                                                    </Box>
+                                                </Link>
+                                            </Box>
+                                        </CardActions>
+                                    </Box>
+                                </Card>
+                            </Box>
+                        ))
+                    }
+                </Box>
+            </Container>
         </>
     );
 }

@@ -71,35 +71,35 @@ function HomeLogin() {
     }, [token])
     return (
         <>
-            <Grid container flex-direction="column" justifyContent="center" alignItems="center" className='caixa'>
-                <Box className='outrabox' paddingTop={5}>
+            <Grid container flex-direction="column" justifyContent="center" alignItems="center" className='page'>
+                <Box className='alinharCards' paddingTop={5}>
                     <Grid alignItems="center" item xs={4}>
-                        <Box className='box cardEstilo' paddingLeft={7} m={2}>
-                            <Card variant="outlined">
+                        <Box className='box cardEstilo' paddingTop={7} paddingLeft={8} m={2}>
+                            <Card >
                                 <CardContent className='box' >
-                                    <img src={fotoPerfil} className='foto-perfil' />
-                                    <Typography className='fonte-titulos-nome' variant="h5" component="h2" align='center' style={{ marginTop: 10 }}>
+                                    <img src={fotoPerfil} className='fotoPerfil' />
+                                    <Typography className='textoPerfil' variant="h5" component="h2" align='center' style={{ marginTop: 10 }}>
                                         {nomeUsuario}
                                     </Typography>
-                                    <Typography className='fonte-titulos-nome' component="h6" align='center'>
+                                    <Typography className='textoPerfil' component="h6" align='center'>
                                         {enderecoUsuario}
                                     </Typography>
-                                    <Typography className='fonte-titulos-nome' component="h6" align='center'>
+                                    <Typography className='textoPerfil' component="h6" align='center'>
                                         {bioUsuario}
                                     </Typography>
 
                                 </CardContent>
                             </Card>
-                            <Box className='cardEstilo outrabox'>
-                                <Box className='alinhar-itens' m={2} >
-                                    <Box className='alinhar-itens'>
-                                        <ModalPostagem />
-                                        <Link to="/postsuser" className="text-decorator-none">
-                                            <Button type='submit' variant='outlined' className='btnPadding'>
-                                                MINHAS POSTAGENS
-                                            </Button>
-                                        </Link>
-                                    </Box>
+                            <Box my={2}>
+                                <Box display='flex' justifyContent="center" className='alinharItens'>
+                                    <ModalPostagem />
+                                    <Link to="/postsuser" className="text-decorator-none">
+                                        <Box mx={1}>
+                                        <Button type='submit' variant='contained' className='btnPostagens'>
+                                            MINHAS POSTAGENS
+                                        </Button>
+                                        </Box>
+                                    </Link>
                                 </Box>
                             </Box>
                         </Box>

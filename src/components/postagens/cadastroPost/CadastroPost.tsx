@@ -158,7 +158,7 @@ function CadastroPost() {
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
+        <Container maxWidth="sm">
             <form onSubmit={onSubmit}>
                 <Typography variant="h4" color="textSecondary" component="h4" align="center" >CADASTRAR NOVA POSTAGEM</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="outlined" name="titulo" margin="normal" fullWidth />
@@ -184,9 +184,9 @@ function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" className='btn-cadastrar-post'>
-                        Finalizar
-                    </Button>
+                        <Button type="submit" variant="contained" className='btn-cadastrar-post'>
+                            Finalizar
+                        </Button>
                 </FormControl>
             </form>
         </Container>

@@ -12,24 +12,22 @@ export default function Home() {
 						<Typography className='font' variant="h2" gutterBottom color="textPrimary" component="h2" align="left" style={{ color: "#424242", fontWeight: "bold" }}>TRANSFORME HOJE A REALIDADE DE UM BAIRRO.</Typography>
 						<Typography className='font' variant="h5" gutterBottom color="textPrimary" component="h5" align="left" style={{ color: "white", fontWeight: "bold" }}>CONTE SUA HISTÓRIA OU ENCONTRE UMA PARA APOIAR.</Typography>
 					</Box>
-					<Box display="flex" paddingLeft={7}>
-						<Box>
+					<Box display="flex" justifyContent='center' >
+						<Box mx={2}>
 							<Link to='/cadastrar' className='text-decorator-none'>
-								<Button className='bot' style={{ fontWeight: "bold" }}>COMECE AQUI</Button>
+								<Button variant='contained' className='btnHome1'>COMECE AQUI</Button>
 							</Link>
 						</Box>
-						<Box>
+						<Box >
 							<Link to='/sobreNos' className='text-decorator-none'>
-							<Button className='bot2' style={{ fontWeight: "bold" }}>NOS CONHEÇA MELHOR</Button>
+								<Button variant='contained' className='btnHome2'>NOS CONHEÇA MELHOR</Button>
 							</Link>
 						</Box>
 					</Box>
 				</Grid>
 				<Grid item xs={7}>
-					<Box paddingRight={6} paddingTop={3} className='teste'>
-					<Box>
-					<img src="https://i.imgur.com/WewRlkd.png" alt="" width='650px' height='650px' />
-						</Box>
+					<Box paddingRight={6} paddingTop={3} className='imgHome'>
+						<img src="https://i.imgur.com/WewRlkd.png" alt="" width='650px' height='650px' />
 					</Box>
 				</Grid>
 			</Grid>

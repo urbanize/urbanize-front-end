@@ -111,15 +111,17 @@ function CadastroTema() {
     return (
         <>
             <Box paddingTop={7}>
-                <Container maxWidth="sm" className="topo">
+                <Container maxWidth="xs">
                     <form onSubmit={onSubmit}>
-                        <Typography variant="h4" color="textSecondary" component="h4" align="center" >CADASTRAR NOVO TEMA</Typography>
+                        <Typography variant="h5" color="textSecondary" component="h5" align="center" >CADASTRAR NOVO TEMA</Typography>
                         <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="Descrição" variant="outlined" name="descricao" margin="normal" fullWidth />
                         <TextField value={tema.palavraChave} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="palavraChave" label="Palavra-Chave" variant="outlined" name="palavraChave" margin="normal" fullWidth />
                         <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="Tema" variant="outlined" name="tema" margin="normal" fullWidth />
-                        <Button type="submit" variant="contained" className='btn-finalizar'>
-                            Finalizar
-                        </Button>
+                        <Box display='flex' justifyContent='center'>
+                            <Button type="submit" variant="contained" className='btn-finalizar'>
+                                Finalizar
+                            </Button>
+                        </Box>
                     </form>
                 </Container>
             </Box>

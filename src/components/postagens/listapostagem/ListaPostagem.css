@@ -1,62 +1,51 @@
-.text-decorator-none{
-    text-decoration: none;
+.page{
+    background-color: #f99f2921;
 }
-
-.bottom-none{
-    display: none !important;;
-}
-
-.btnCancelar{
-    background-color: white!important;
-    color: #f99e29!important;
-    font-weight: bold!important;
-    margin-right: 45px !important;
-}
-
-.botao2{
-    border-radius: 6px!important;
-    background-color: #f99e29!important;
-    border: 1px solid #c4c4c4!important;
-    color: white!important;
-    font-weight: bold!important;
-    margin-left: 45px !important
-}
-
 .fonte-titulos{
     font-weight: bold;
     font-family: 'Source Sans Pro', sans-serif!important;
     color: #505050;
 }
-
-.fonte-texto{
-    font-family: Helvetica;
-    font-size: 15px!important;
-    word-break: break-word;
-}
-
 .fonte-tema {
     font-weight: bold;
     font-family: 'Source Sans Pro', sans-serif!important;
     color: #505050;
 }
-
 .espaco-letras{
     letter-spacing: 1px!important;
 }
-
-.foto-post{
-    width: 500px;
-    height: 300px;
-}
-
 .fonte-endereco{
     font-size: 12px!important;
     font-family: Helvetica;
     color: #505050;
-  }
-
-  .fonte-contato{
+}
+.fonte-texto{
+    font-family: Helvetica;
+    font-size: 15px!important;
+    word-break: break-word;
+}
+.foto-post{
+    width: 500px;
+    height: 300px;
+}
+.fonte-contato{
     font-size: 15px!important;
     font-family: Helvetica;
     color: #505050;
-  }
+}
+.btn-deletar-post{
+    background-color: white!important;
+    color: #f99e29!important;
+    font-weight: bold!important;
+    }
+
+.btn-atualizar-post{
+    border-radius: 6px!important;
+    background-color: #f99e29!important;
+    border: 1px solid #c4c4c4!important;
+    color: white!important;
+    font-weight: bold!important;
+}
+.text-decorator-none{
+    text-decoration: none;
+}

@@ -99,7 +99,7 @@ function CadastroUsuario() {
             <Grid item xs={6} alignItems='center'>
                 <Box paddingX={18} alignItems='center'>
                     <form onSubmit={onSubmit}>
-                        <Typography variant='h2' gutterBottom color='textPrimary' component='h2' align='center' className='textos2'>Cadastrar</Typography>
+                        <Typography variant='h2' gutterBottom color='textPrimary' component='h2' align='center' className='textoCadastro'>Cadastrar</Typography>
                         <TextField value={user.nomeCompleto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nomeCompleto' label='Nome Completo' variant='outlined' name='nomeCompleto' margin='normal' fullWidth />
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário (E-mail)' variant='outlined' name='usuario' margin='normal' fullWidth />
                         <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='Bio (um pouco sobre você)' variant='outlined' name='bio' margin='normal' fullWidth />
@@ -108,13 +108,13 @@ function CadastroUsuario() {
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
 
-                        <Box marginTop={2} textAlign='center'>
+                        <Box my={2} display='flex' justifyContent='center' >
                             <Link to='/home' className='text-decorator-none'>
                                 <Button variant='contained' className='btnCancelar'>
                                     Cancelar
                                 </Button>
                             </Link>
-                            <Button type='submit' variant='contained' className='botao2'>
+                            <Button type='submit' variant='contained' className='btnCadastrar'>
                                 Cadastrar
                             </Button>
                         </Box>

@@ -8,13 +8,13 @@ export default function Footer() {
     return (
         <>
             <Grid container direction="row" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", backgroundColor: "#f99e29" }}>
-                <Box paddingTop={1} paddingLeft={7} style={{ backgroundColor: "#f99e29", height: "60px" }}>
-                    <Box>
-                        <Typography variant="subtitle2" align="left" gutterBottom style={{ color: "white" }} >© 2021 Copyright:</Typography>
+                <Box paddingLeft={7} style={{ backgroundColor: "#f99e29", height: "60px" }}>
+                    <Box paddingTop={1}>
+                        <Typography variant="subtitle2" align="left" style={{ color: "white" }} >© 2021 Copyright:</Typography>
                     </Box>
                     <Box>
-                        <a target="_blank" className='text-decorator-none2' href="https://brasil.generation.org">
-                            <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center" >brasil.generation.org</Typography>
+                        <a target="_blank" className='text-decorator-none' href="https://brasil.generation.org">
+                            <Typography variant="subtitle2" style={{ color: "white" }} align="center">brasil.generation.org</Typography>
                         </a>
                     </Box>
                 </Box>
@@ -29,7 +29,6 @@ export default function Footer() {
                         <LinkedInIcon style={{ fontSize: 40, color: "white" }} />
                     </a>
                 </Box>
-
             </Grid>
         </>
     )

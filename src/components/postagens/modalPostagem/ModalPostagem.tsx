@@ -57,9 +57,10 @@ function ModalPostagem() {
   );
 
   return (
-    <div>
+    <Box>
+      <Box mx={1}>
       <Button
-        variant="outlined"
+        variant='contained'
         className="btn"
         onClick={handleOpen}>Nova Postagem</Button>
       <Modal
@@ -70,7 +71,8 @@ function ModalPostagem() {
       >
         {body}
       </Modal>
-    </div>
+      </Box>
+    </Box>
   );
 }
 export default ModalPostagem

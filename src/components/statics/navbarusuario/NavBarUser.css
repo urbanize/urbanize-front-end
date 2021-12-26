@@ -5,22 +5,14 @@
 
 .text-decorator-none{
     text-decoration: none;
-    color: white!important;
+   
 }
-.text-decorator-none2{
-    text-decoration: none;
-}
-.bot4{
+.btn-cadastre-se{
     text-decoration: none!important;
     border-color: #fafafa!important;
     background: #fafafa!important;
     color: #f99e29!important;
 }
-
-.padding-logo {
-    margin: 0% !important;
-}
-
 .avatar {
     width: 35px!important;
     height: 35px!important;

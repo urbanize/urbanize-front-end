@@ -1,22 +1,19 @@
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap%27);
 
-.bot{
+.btnHome1{
     text-decoration: none;
     border-color: #fafafa;
+    font-weight: bold!important;
     background: #fafafa!important;
     color: #f99e29!important;
-    padding-left: 7;
-    
-    
 }
-.bot2{
+.btnHome2{
     text-decoration: none;
+    font-weight: bold!important;
     border: 1px solid #fafafa !important;
     background: #f99e29!important;
     color: #fafafa!important;
-    padding-left: 7;
 }
-
 .text-decorator-none{
     text-decoration: none;
 }
@@ -25,12 +22,8 @@
 font-family: 'Source Sans Pro', sans-serif;
 }
 
-.teste{
+.imgHome{
     display: flex !important;
     justify-content: flex-end;
+  
 }
-
-
-
-
-
