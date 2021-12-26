@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Box, Card, CardActions, CardContent, Button, Typography, Container } from '@material-ui/core';
+import { Box, Card, CardActions, CardContent, Button, Typography, Container, Grid } from '@material-ui/core';
 import Tema from '../../pages/models/Tema';
 import './ListaTema.css';
 import { useHistory } from 'react-router-dom';
@@ -56,51 +56,53 @@ function ListaTema() {
 
     return (
         <>
-            <Container maxWidth="xs">
-                <Box paddingTop={7}>
-                    {
-                        temas.map(tema => (
-                            <Box m={2} >
-                                <Card >
-                                    <Box display="flex" justifyContent="center">
-                                        <CardContent>
-                                            <Typography color="textSecondary">
-                                                TEMA
-                                            </Typography>
-                                            <Typography variant="h5" component="h5">
-                                                {tema.descricao}
-                                            </Typography>
-                                            <Typography>
-                                                Palavra-Chave:  {tema.palavraChave}
-                                            </Typography>
-                                        </CardContent>
-                                    </Box>
-                                    <Box display="flex" justifyContent="center" paddingBottom={1} className={botoes}>
-                                        <CardActions>
-                                            <Box display='flex'>
-                                                <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
-                                                    <Box mx={1}>
-                                                        <Button variant="contained" className="btn-atualizar-tema" size='small'>
-                                                            ATUALIZAR
-                                                        </Button>
-                                                    </Box>
-                                                </Link>
-                                                <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
-                                                    <Box mx={1}>
-                                                        <Button className='btn-deletar-tema' variant="contained" size='small'>
-                                                            DELETAR
-                                                        </Button>
-                                                    </Box>
-                                                </Link>
-                                            </Box>
-                                        </CardActions>
-                                    </Box>
-                                </Card>
-                            </Box>
-                        ))
-                    }
-                </Box>
-            </Container>
+           <Grid className='bg-tema'>
+                <Container maxWidth="xs" >
+                    <Box paddingTop={7}>
+                        {
+                            temas.map(tema => (
+                                <Box m={2} >
+                                    <Card >
+                                        <Box display="flex" justifyContent="center">
+                                            <CardContent>
+                                                <Typography color="textSecondary">
+                                                    TEMA
+                                                </Typography>
+                                                <Typography variant="h5" component="h5">
+                                                    {tema.descricao}
+                                                </Typography>
+                                                <Typography>
+                                                    Palavra-Chave:  {tema.palavraChave}
+                                                </Typography>
+                                            </CardContent>
+                                        </Box>
+                                        <Box display="flex" justifyContent="center" paddingBottom={1} className={botoes}>
+                                            <CardActions>
+                                                <Box display='flex'>
+                                                    <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
+                                                        <Box mx={1}>
+                                                            <Button variant="contained" className="btn-atualizar-tema" size='small'>
+                                                                ATUALIZAR
+                                                            </Button>
+                                                        </Box>
+                                                    </Link>
+                                                    <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
+                                                        <Box mx={1}>
+                                                            <Button className='btn-deletar-tema' variant="contained" size='small'>
+                                                                DELETAR
+                                                            </Button>
+                                                        </Box>
+                                                    </Link>
+                                                </Box>
+                                            </CardActions>
+                                        </Box>
+                                    </Card>
+                                </Box>
+                            ))
+                        }
+                    </Box>
+                </Container>
+            </Grid>
         </>
     );
 }

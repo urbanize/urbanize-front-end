@@ -3,8 +3,10 @@
         background-color: #f99e29!important;
         border: 1px solid #c4c4c4!important;
         color: white!important;
-        font-weight: bold!important;
-       
-    
+        font-weight: bold!important;    
 }
+.bg-tema-cadastro{
+        background-color: rgba(17, 0, 255, 0.034);
+        height: 100vh;
+    }
 

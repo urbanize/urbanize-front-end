@@ -1,5 +1,5 @@
-.page{
-    background-color: #f99f2921;
+.bg-home-login{
+    background-color: rgba(17, 0, 255, 0.034);
 }
 .alinharCards{
     display: flex;

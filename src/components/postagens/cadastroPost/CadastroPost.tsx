@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import { Grid, Box, Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastroPost.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Tema from '../../pages/models/Tema';
@@ -158,38 +158,42 @@ function CadastroPost() {
     }
 
     return (
-        <Container maxWidth="sm">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h4" color="textSecondary" component="h4" align="center" >CADASTRAR NOVA POSTAGEM</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.contato} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="contato" label="E-mail (para contato referente ao projeto)" name="contato" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="endereco" label="Local do Projeto" name="endereco" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.midia} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="midia" label="Link da foto (URL)" name="midia" variant="outlined" margin="normal" fullWidth />
+        <>
+            <Grid className='bg-cadastrar-post'>
+                <Container maxWidth="sm">
+                        <form onSubmit={onSubmit}>
+                            <Typography variant="h4" color="textSecondary" component="h4" align="center" >CADASTRAR NOVA POSTAGEM</Typography>
+                            <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="outlined" name="titulo" margin="normal" fullWidth />
+                            <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                            <TextField value={postagem.contato} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="contato" label="E-mail (para contato referente ao projeto)" name="contato" variant="outlined" margin="normal" fullWidth />
+                            <TextField value={postagem.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="endereco" label="Local do Projeto" name="endereco" variant="outlined" margin="normal" fullWidth />
+                            <TextField value={postagem.midia} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="midia" label="Link da foto (URL)" name="midia" variant="outlined" margin="normal" fullWidth />
 
-                <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-                    <Select
-                        labelId="demo-simple-select-helper-label"
-                        id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
-                            headers: {
-                                'Authorization': token
-                            }
-                        })}>
-                        {
-                            temas.map(tema => (
-                                <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
-                            ))
-                        }
-                    </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                        <Button type="submit" variant="contained" className='btn-cadastrar-post'>
-                            Finalizar
-                        </Button>
-                </FormControl>
-            </form>
-        </Container>
+                            <FormControl >
+                                <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-helper-label"
+                                    id="demo-simple-select-helper"
+                                    onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                                        headers: {
+                                            'Authorization': token
+                                        }
+                                    })}>
+                                    {
+                                        temas.map(tema => (
+                                            <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+                                        ))
+                                    }
+                                </Select>
+                                <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                                <Button type="submit" variant="contained" className='btn-cadastrar-post'>
+                                    Finalizar
+                                </Button>
+                            </FormControl>
+                        </form>
+                </Container>
+            </Grid>
+        </>
     )
 }
 export default CadastroPost;

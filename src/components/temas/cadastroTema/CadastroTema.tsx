@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from 'react'
-import { Container, Typography, TextField, Button, Box } from "@material-ui/core"
+import { Container, Typography, TextField, Button, Box, Grid } from "@material-ui/core"
 import { useHistory, useParams } from 'react-router-dom'
 import './CadastroTema.css';
 import Tema from '../../pages/models/Tema';
@@ -110,21 +110,23 @@ function CadastroTema() {
 
     return (
         <>
-            <Box paddingTop={7}>
-                <Container maxWidth="xs">
-                    <form onSubmit={onSubmit}>
-                        <Typography variant="h5" color="textSecondary" component="h5" align="center" >CADASTRAR NOVO TEMA</Typography>
-                        <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="Descrição" variant="outlined" name="descricao" margin="normal" fullWidth />
-                        <TextField value={tema.palavraChave} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="palavraChave" label="Palavra-Chave" variant="outlined" name="palavraChave" margin="normal" fullWidth />
-                        <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="Tema" variant="outlined" name="tema" margin="normal" fullWidth />
-                        <Box display='flex' justifyContent='center'>
-                            <Button type="submit" variant="contained" className='btn-finalizar'>
-                                Finalizar
-                            </Button>
-                        </Box>
-                    </form>
-                </Container>
-            </Box>
+            <Grid className='bg-tema-cadastro'>
+                <Box paddingTop={7}>
+                    <Container maxWidth="xs">
+                        <form onSubmit={onSubmit}>
+                            <Typography variant="h5" color="textSecondary" component="h5" align="center" >CADASTRAR NOVO TEMA</Typography>
+                            <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="Descrição" variant="outlined" name="descricao" margin="normal" fullWidth />
+                            <TextField value={tema.palavraChave} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="palavraChave" label="Palavra-Chave" variant="outlined" name="palavraChave" margin="normal" fullWidth />
+                            <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="Tema" variant="outlined" name="tema" margin="normal" fullWidth />
+                            <Box display='flex' justifyContent='center'>
+                                <Button type="submit" variant="contained" className='btn-finalizar'>
+                                    Finalizar
+                                </Button>
+                            </Box>
+                        </form>
+                    </Container>
+                </Box>
+            </Grid>
         </>
     )
 }

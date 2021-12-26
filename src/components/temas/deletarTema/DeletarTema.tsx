@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Box, Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
 import './DeletarTema.css';
 import { useHistory, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../pages/services/Service';
@@ -72,34 +72,38 @@ function DeletarTema() {
 
   return (
     <>
-      <Box m={2} paddingTop={7}>
-        <Card variant="outlined">
-          <CardContent>
-            <Box justifyContent="center">
-              <Typography color="textSecondary">
-                Deseja deletar o Tema:
-              </Typography>
-              <Typography color="textSecondary">
-                {tema?.descricao}
-              </Typography>
+      <Grid className='bg-tema-deletar'>
+        <Box m={2} paddingTop={7} display='flex' justifyContent='center'>
+          <Card variant="outlined">
+            <Box display='flex' justifyContent='center'>
+              <CardContent>
+                <Box>
+                  <Typography color="textSecondary">
+                    Deseja deletar o Tema:
+                  </Typography>
+                  <Typography color="textSecondary">
+                    {tema?.descricao}
+                  </Typography>
+                </Box>
+              </CardContent>
             </Box>
-          </CardContent>
-          <CardActions>
-            <Box display="flex" justifyContent="center">
-              <Box mx={1}>
-                <Button onClick={sim} variant="contained" className="deletar-tema" size='small'>
-                  Sim
-                </Button>
+            <CardActions>
+              <Box display="flex" justifyContent="center">
+                <Box mx={1}>
+                  <Button onClick={sim} variant="contained" className="deletar-tema" size='small'>
+                    Sim
+                  </Button>
+                </Box>
+                <Box mx={1}>
+                  <Button onClick={nao} variant="contained" size='small' className='nao-deletar-tema'>
+                    Não
+                  </Button>
+                </Box>
               </Box>
-              <Box mx={1}>
-                <Button onClick={nao} variant="contained" size='small' className='nao-deletar-tema'>
-                  Não
-                </Button>
-              </Box>
-            </Box>
-          </CardActions>
-        </Card>
-      </Box>
+            </CardActions>
+          </Card>
+        </Box>
+      </Grid>
     </>
   );
 }

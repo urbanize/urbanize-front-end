@@ -15,3 +15,10 @@
     color: white!important;
     font-weight: bold!important;
 }
+.bottom-none{
+    display: none !important;
+}
+.bg-tema{
+    background-color: rgba(17, 0, 255, 0.034);
+    height: 100vh;
+}

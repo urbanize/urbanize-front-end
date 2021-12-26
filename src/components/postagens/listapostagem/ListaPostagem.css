@@ -1,6 +1,3 @@
-.page{
-    background-color: #f99f2921;
-}
 .fonte-titulos{
     font-weight: bold;
     font-family: 'Source Sans Pro', sans-serif!important;
@@ -48,4 +45,7 @@
 }
 .text-decorator-none{
     text-decoration: none;
+}
+.bottom-none{
+    display: none !important;
 }

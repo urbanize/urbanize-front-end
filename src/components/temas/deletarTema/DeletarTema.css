@@ -13,3 +13,7 @@
     font-weight: bold!important;
     margin-left: 45px !important
 }
+.bg-tema-deletar{
+    background-color: rgba(17, 0, 255, 0.034);
+    height: 100vh;
+}

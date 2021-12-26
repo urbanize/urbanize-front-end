@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Typography, Box, Grid, Button, Card, CardContent } from '@material-ui/core';
-import TabPostagem from '../../postagens/tabPostagem/TabPostagem';
 import ModalPostagem from '../../postagens/modalPostagem/ModalPostagem';
 import './HomeLogin.css';
 import { useHistory } from 'react-router';
@@ -71,7 +70,7 @@ function HomeLogin() {
     }, [token])
     return (
         <>
-            <Grid container flex-direction="column" justifyContent="center" alignItems="center" className='page'>
+            <Grid container flex-direction="column" justifyContent="center" alignItems="center" className='bg-home-login'>
                 <Box className='alinharCards' paddingTop={5}>
                     <Grid alignItems="center" item xs={4}>
                         <Box className='box cardEstilo' paddingTop={7} paddingLeft={8} m={2}>
