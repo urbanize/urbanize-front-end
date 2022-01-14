@@ -48,7 +48,7 @@ function DeletarPostagem() {
   }
 
   function sim() {
-    history.push('/posts')
+    history.push('/postsuser')
     deleteId(`/postagens/${id}`, {
       headers: {
         'Authorization': token
@@ -67,7 +67,7 @@ function DeletarPostagem() {
   }
 
   function nao() {
-    history.push('/posts')
+    history.push('/postsuser')
   }
   return (
     <>
