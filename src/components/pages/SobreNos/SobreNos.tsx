@@ -215,7 +215,7 @@ function SobreNos() {
                                     Desenvolvedor Full Stack 
                                 </Typography>
                                 <Typography align='center'>
-                                Operador de Rastreamento
+                                Estudante de Análise e Des. de Sist.
                                 </Typography>
                             </Box>
 
