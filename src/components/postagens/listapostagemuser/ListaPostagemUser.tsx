@@ -63,7 +63,7 @@ function ListaPostagemUser() {
 
     return (
         <>
-            <Grid className='bg-postagens-users'>
+            <Grid className="bg-postagens-users">
                 <Container maxWidth="md">
                     <Box paddingTop={7} paddingLeft={6} paddingRight={6}>
                         {
@@ -120,7 +120,7 @@ function ListaPostagemUser() {
                 </Container>
             </Grid>
         </>
-    );
+    )
 }
 
 export default ListaPostagemUser;
